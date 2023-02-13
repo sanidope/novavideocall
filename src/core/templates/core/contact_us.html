@@ -1,0 +1,361 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>ContactUs | Vidicu </title>
+
+  <!-- Favicon -->
+  <meta charset="utf-8">
+  <meta name="author" content="Vidicu" />
+  <meta name=”robots” content="index, follow">
+  <link rel="canonical" href="https://vidicu.live/about-us/">
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://vidicu.live"/>
+  <meta property="twitter:title" content="Vidicu | AI Powered Video Conferencing, Video Calls, Online Meetings" />
+  <meta name="twitter:description" content="Vidicu is a cloud-based video conferencing platform that offers a range of AI-powered features to make virtual meetings more efficient and engaging. With Vidicu, you can host high-quality video and audio meetings, share screens, and collaborate with team members in real-tim">
+  <meta name="twitter:image" content="vidicu banner">
+  <meta property="twitter:image:alt" content="Vidicu logo">
+  <meta name="twitter:site" content="@vidiculive">
+  
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vidicu | AI Powered Video Conferencing, Video Calls, Online Meetings" />
+  <meta property="og:description" content="Vidicu is a cloud-based video conferencing platform that offers a range of AI-powered features to make virtual meetings more efficient and engaging. With Vidicu, you can host high-quality video and audio meetings, share screens, and collaborate with team members in real-time" />
+  <meta property="og:image" content="vidicu banner" />
+  <meta property="og:url" content="https://vidicu.live/" />
+  <meta property="og:site_name" content="Vidicu" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:video" content="{% static 'video/vidicu.mp4'  %}" />
+    
+
+  <meta name="description" content="Vidicu is a cloud-based video conferencing platform that offers a range of AI-powered features to make virtual meetings more efficient and engaging. With Vidicu, you can host high-quality video and audio meetings, share screens, and collaborate with team members in real-time."/> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="vidicu, vidicu.live, ai powered video conferencing, ai powered, video calls, virtual meetings, group video chat, calling, meetings, webinars, video collaboration, live translate, group messaging, virtual meetings, cloud meeting" name="keywords">
+  
+  <!-- Title -->
+
+  <!-- Favicon -->
+  <link rel="icon"  type="image/png" href="{% static 'favicon.png' %}">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-icons/font/bootstrap-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css' %}">
+
+  <!-- CSS Unify Template -->
+  <link rel="stylesheet" href="{% static 'assets/css/theme.min.css' %}">
+</head>
+
+<body>
+  <!-- ========== HEADER ========== -->
+    {% include 'header.html' %}
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+    <!-- Card Grid -->
+    <div class="container content-space-t-3 content-space-t-lg-4">
+      <div class="text-center mb-7">
+        <h1 class="display-5">How can we help?</h1>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <div class="col mb-4 mb-lg-0">
+          <!-- Card -->
+          <div class="card card-lg text-center h-100">
+            <div class="card-body">
+              <div class="mb-3">
+                <i class="bi-person-circle fs-1 text-dark"></i>
+              </div>
+
+              <div class="mb-5">
+                <h4>Inquiries</h4>
+              </div>
+
+              <div class="mb-5">
+                <span class="d-block">{{ previsitinquires.week_day }}</span>
+                <span class="d-block">{{ previsitinquires.time }}</span>
+              </div>
+
+              <div class="d-grid mb-3">
+                <a class="btn btn-white" href="{{ previsitinquires.email }}"><i class="bi-envelope-open me-2"></i> {{ previsitinquires.email }}</a>
+              </div>
+
+              
+            </div>
+          </div>
+          <!-- End Card -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col mb-4 mb-lg-0">
+          <!-- Card -->
+          <div class="card card-lg text-center h-100">
+            <div class="card-body">
+              <div class="mb-3">
+                <i class="bi-wallet2 fs-1 text-dark"></i>
+              </div>
+
+              <div class="mb-5">
+                <h4>Billing questions</h4>
+              </div>
+
+              <div class="mb-5">
+                <span class="d-block"> {{ billing_question.week_day }}</span>
+                <span class="d-block">{{ billing_question.time }}</span>
+              </div>
+
+              <div class="d-grid mb-3">
+                <a class="btn btn-white" href="{{ billing_question.email }}"><i class="bi-envelope-open me-2"></i> {{ billing_question.email }} </a>
+              </div>
+
+             
+            </div>
+          </div>
+          <!-- End Card -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col">
+          <!-- Card -->
+          <div class="card card-lg text-center h-100">
+            <div class="card-body">
+              <div class="mb-3">
+                <i class="bi-currency-exchange fs-1 text-dark"></i>
+              </div>
+
+              <div class="mb-5">
+                <h4>Sales questions</h4>
+              </div>
+
+              <div class="mb-5">
+                <span class="d-block">{{ salesquestions.week_day }}</span>
+                <span class="d-block">{{ salesquestions.time }}</span>
+              </div>
+
+              <div class="d-grid mb-3">
+                <a class="btn btn-white" href="{{ salesquestions.email }}"><i class="bi-envelope-open me-2"></i> {{ salesquestions.email }}</a>
+              </div>
+
+            
+            </div>
+          </div>
+          <!-- End Card -->
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Card Grid -->
+
+    <!-- Contact Form -->
+    <div class="overflow-hidden">
+      <div class="container content-space-1 content-space-lg-4">
+        <div class="row">
+          <div class="col-lg-6 mb-10 mb-lg-0">
+            <div class="pe-lg-10">
+              <div class="mb-5">
+                <h3>Our office</h3>
+              </div>
+
+              <div class="mb-5">
+                <img class="img-fluid" src="{{ office_address.office_pic.url }}" width="{{ office_address.office_pic.width }}" height="{{ office_address.office_pic.height }}" alt="{{ office_address.office_pic_description }}">
+              </div>
+
+              <!-- Info -->
+              <address>
+                <span class="d-block fs-3 fw-bold text-dark mb-2">{{ office_address.country_code }}:</span>
+                {% autoescape off %}
+                    {{ office_address.office_address }}
+                {% endautoescape %}
+              </address>
+              <!-- End Info -->
+            </div>
+          </div>
+          <!-- End Col -->
+
+          <div class="col-lg-6">
+            <div class="position-relative">
+              <!-- Card -->
+              <div class="card card-lg">
+                <!-- Card Body -->
+                <div class="card-body">
+                  <h4 class="mb-4">Fill in the form</h4>
+
+                  <form id="contactForm" method="POST">
+
+                    {% csrf_token %}
+
+                    <div class="row">
+                      <div class="col-sm-6 mb-4 mb-sm-0">
+                        <!-- Form -->
+                        <div class="mb-4">
+                          <label class="form-label" for="contactsFormFirstName"> First name</label>
+                            {% render_field contactform.first_name class="form-control" name="contactsFormNameFirstName" id="contactsFormFirstName" %}
+                          
+                        </div>
+                        <!-- End Form -->
+                      </div>
+                      <!-- End Col -->
+
+                      <div class="col-sm-6">
+                        <!-- Form -->
+                        <div class="mb-4">
+                          <label class="form-label" for="contactsFormLasttName"> Last name</label>
+                          {% render_field contactform.last_name class="form-control" name="contactsFormNameLastName" id="contactsFormLasttName" %}
+                        </div>
+                        <!-- End Form -->
+                      </div>
+                      <!-- End Col -->
+                    </div>
+                    <!-- End Row -->
+
+                    <!-- Form -->
+                    <div class="mb-4">
+                      <label class="form-label" for="contactsFormWorkEmail"> Email</label>
+                      {% render_field contactform.email class="form-control" name="contactsFormNameWorkEmail" id="contactsFormWorkEmail" %}    
+                    </div>
+                    <!-- End Form -->
+
+                    <!-- Form -->
+                    <div class="mb-4">
+                      <label class="form-label" for="contactsFormDetails"> Message </label>
+                      {% render_field contactform.message class="form-control" name="contactsFormNameDetails" id="contactsFormDetails" rows="4" %}    
+                      
+                    </div>
+                    <!-- End Form -->
+
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-primary btn-lg">Send inquiry</button>
+                    </div>
+                  </form>
+
+                </div>
+                <!-- End Card Body -->
+              </div>
+              <!-- End Card -->
+
+              <!-- SVG Shape -->
+              <figure class="position-absolute bottom-0 end-0 zi-n1 d-none d-md-block mb-n10" style="width: 15rem; margin-right: -8rem;">
+                <img class="img-fluid" src="{% static 'assets/svg/illustrations/grid-grey.svg' %}" alt="Image Description">
+              </figure>
+              <!-- End SVG Shape -->
+
+              <!-- SVG Shape -->
+              <figure class="position-absolute bottom-0 end-0 d-none d-md-block me-n5 mb-n5" style="width: 10rem;">
+                <img class="img-fluid" src="{% static 'assets/svg/illustrations/plane.svg' %}" alt="Image Description">
+              </figure>
+              <!-- End SVG Shape -->
+            </div>
+          </div>
+          <!-- End Col -->
+        </div>
+        <!-- End Row -->
+      </div>
+    </div>
+    <!-- End Contact Form -->
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== FOOTER ========== -->
+  {% include 'footer.html' %}
+  <!-- ========== END FOOTER ========== -->
+
+  <!-- ========== SECONDARY CONTENTS ========== -->
+  <!-- Go To -->
+  <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;" data-hs-go-to-options='{
+       "offsetTop": 700,
+       "position": {
+         "init": {
+           "right": "2rem"
+         },
+         "show": {
+           "bottom": "2rem"
+         },
+         "hide": {
+           "bottom": "-2rem"
+         }
+       }
+     }'>
+    <i class="bi-chevron-up"></i>
+  </a>
+  <!-- ========== END SECONDARY CONTENTS ========== -->
+
+  <!-- JS Global Compulsory  -->
+  <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- JS Implementing Plugins -->
+  <script src="{% static 'assets/vendor/hs-header/dist/hs-header.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-go-to/dist/hs-go-to.min.js' %}"></script>
+
+  <!-- JS Unify -->
+  <script src="{% static 'assets/js/theme.min.js' %}"></script>
+
+  <script>
+    $(document).ready(function () {
+        // catch the form's submit event
+        $('#contactForm').submit(function () {
+            // create an AJAX call
+            $.ajax({
+                data: $(this).serialize(), // get the form data
+                type: $(this).attr('method'), // GET or POST
+                url: "{% url 'core:contact_us' %}",
+                // on success
+                success: function (response) {
+                    var message = "Thank you for reaching us out " + response.name
+                    swal("Success!", message, "success");
+                    document.getElementById("contactForm").reset();
+                },
+                // on error
+                error: function (response) {
+                    // alert the error if any error occured
+                    alert(response.responseJSON.errors);
+                    console.log(response.responseJSON.errors)
+                }
+            });
+            return false;
+        });
+    })
+</script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    (function() {
+      // INITIALIZATION OF NAVBAR
+      // =======================================================
+      new HSHeader('#header').init()
+
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      const megaMenu = new HSMegaMenu('.js-mega-menu', {
+        desktop: {
+          position: 'left'
+        }
+      })
+
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      new HSGoTo('.js-go-to')
+    })()
+  </script>
+</body>
+
+
+</html>

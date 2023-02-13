@@ -1,0 +1,158 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+  <title>Privacy &amp; Policy | Vidicu </title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Vidicu" />
+  <meta name=”robots” content="index, follow">
+  <link rel="canonical" href="https://vidicu.live/privacy-policy/">
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://vidicu.live"/>
+  <meta property="twitter:title" content="Vidicu | AI Powered Video Conferencing, Video Calls, Online Meetings" />
+  <meta name="twitter:description" content="Vidicu is a cloud-based video conferencing platform that offers a range of AI-powered features to make virtual meetings more efficient and engaging. With Vidicu, you can host high-quality video and audio meetings, share screens, and collaborate with team members in real-tim">
+  <meta name="twitter:image" content="vidicu banner">
+  <meta property="twitter:image:alt" content="Vidicu logo">
+  <meta name="twitter:site" content="@vidiculive">
+  
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vidicu | AI Powered Video Conferencing, Video Calls, Online Meetings" />
+  <meta property="og:description" content="Vidicu is a cloud-based video conferencing platform that offers a range of AI-powered features to make virtual meetings more efficient and engaging. With Vidicu, you can host high-quality video and audio meetings, share screens, and collaborate with team members in real-time" />
+  <meta property="og:image" content="vidicu banner" />
+  <meta property="og:url" content="https://vidicu.live/" />
+  <meta property="og:site_name" content="Vidicu" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:video" content="{% static 'video/vidicu.mp4'  %}" />
+
+
+  <meta name="description" content="Vidicu is a cloud-based video conferencing platform that offers a range of AI-powered features to make virtual meetings more efficient and engaging. With Vidicu, you can host high-quality video and audio meetings, share screens, and collaborate with team members in real-time."/> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="vidicu, vidicu.live, ai powered video conferencing, ai powered, video calls, virtual meetings, group video chat, calling, meetings, webinars, video collaboration, live translate, group messaging, virtual meetings, cloud meeting" name="keywords">
+  
+  <!-- Title -->
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-icons/font/bootstrap-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css' %}">
+
+  <!-- CSS Unify Template -->
+  <link rel="stylesheet" href="{% static 'assets/css/theme.min.css' %}">
+</head>
+
+<body class="bg-light">
+  <!-- ========== HEADER ========== -->
+
+  {% include 'header.html' %}
+
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+    <!-- Content -->
+    <div class="container content-space-2 content-space-lg-3">
+      <div class="w-lg-75 mx-lg-auto">
+        <!-- Card -->
+        <div class="card card-lg card-shadow">
+          <!-- Header -->
+          <div class="card-header bg-dark">
+            <h1 class="card-title h2 text-white">Privacy &amp; Policy</h1>
+            <p class="card-text text-white"></p>
+          </div>
+          <!-- End Header -->
+
+          <!-- Card Body -->
+          <div class="card-body">
+            <div class="mb-7">
+              {% autoescape off %}
+                  {{ privacy_policy.content }}
+              {% endautoescape %}
+            </div>
+
+          </div>
+          <!-- End Card Body -->
+        </div>
+        <!-- End Card -->
+      </div>
+    </div>
+    <!-- End Content -->
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== FOOTER ========== -->
+  
+
+  {% include 'footer.html' %}
+  <!-- ========== END FOOTER ========== -->
+
+  <!-- ========== SECONDARY CONTENTS ========== -->
+  <!-- Go To -->
+  <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;" data-hs-go-to-options='{
+       "offsetTop": 700,
+       "position": {
+         "init": {
+           "right": "2rem"
+         },
+         "show": {
+           "bottom": "2rem"
+         },
+         "hide": {
+           "bottom": "-2rem"
+         }
+       }
+     }'>
+    <i class="bi-chevron-up"></i>
+  </a>
+  <!-- ========== END SECONDARY CONTENTS ========== -->
+
+  <!-- JS Global Compulsory  -->
+  <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="{% static 'assets/vendor/hs-header/dist/hs-header.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-go-to/dist/hs-go-to.min.js' %}"></script>
+
+  <!-- JS Unify -->
+  <script src="{% static 'assets/js/theme.min.js' %}"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    (function() {
+      // INITIALIZATION OF NAVBAR
+      // =======================================================
+      new HSHeader('#header').init()
+
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      const megaMenu = new HSMegaMenu('.js-mega-menu', {
+        desktop: {
+          position: 'left'
+        }
+      })
+
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      new HSGoTo('.js-go-to')
+    })()
+  </script>
+</body>
+
+
+</html>

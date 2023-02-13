@@ -1,0 +1,389 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <!-- Required Meta Tags Always Come First -->
+ 
+
+  <!-- Title -->
+  <title>About | Vidicu </title>
+
+  <!-- Favicon -->
+  <meta charset="utf-8">
+  <meta name="author" content="Vidicu" />
+  <meta name=”robots” content="index, follow">
+  <link rel="canonical" href="https://vidicu.live/about-us/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://vidicu.live"/>
+  <meta property="twitter:title" content="Vidicu | AI Powered Video Conferencing, Video Calls, Online Meetings" />
+  <meta name="twitter:description" content="Vidicu is a cloud-based video conferencing platform that offers a range of AI-powered features to make virtual meetings more efficient and engaging. With Vidicu, you can host high-quality video and audio meetings, share screens, and collaborate with team members in real-tim">
+  <meta name="twitter:image" content="vidicu banner">
+  <meta property="twitter:image:alt" content="Vidicu logo">
+  <meta name="twitter:site" content="@vidiculive">
+  
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vidicu | AI Powered Video Conferencing, Video Calls, Online Meetings" />
+  <meta property="og:description" content="Vidicu is a cloud-based video conferencing platform that offers a range of AI-powered features to make virtual meetings more efficient and engaging. With Vidicu, you can host high-quality video and audio meetings, share screens, and collaborate with team members in real-time" />
+  <meta property="og:image" content="vidicu banner" />
+  <meta property="og:url" content="https://vidicu.live/" />
+  <meta property="og:site_name" content="Vidicu" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:video" content="{% static 'video/vidicu.mp4'  %}" />
+    
+
+  <meta name="description" content="Vidicu is a cloud-based video conferencing platform that offers a range of AI-powered features to make virtual meetings more efficient and engaging. With Vidicu, you can host high-quality video and audio meetings, share screens, and collaborate with team members in real-time."/> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="vidicu, vidicu.live, ai powered video conferencing, ai powered, video calls, virtual meetings, group video chat, calling, meetings, webinars, video collaboration, live translate, group messaging, virtual meetings, cloud meeting" name="keywords">
+  
+  <!-- Title -->
+
+  <!-- Favicon -->
+  <link rel="icon"  type="image/png" href="{% static 'favicon.png' %}">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-icons/font/bootstrap-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/theme.min.css' %}">
+</head>
+
+<body>
+  <!-- ========== HEADER ========== -->
+    {% include 'header.html' %}
+
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+    <!-- Hero -->
+    <div class="container content-space-t-3 content-space-t-lg-4">
+      <div class="w-lg-65 text-center mx-lg-auto mb-5 mb-sm-7 mb-lg-10">
+        <h1 class="display-4">About</h1>
+        
+      </div>
+
+      <div class="position-relative bg-img-center min-vh-35 min-vh-md-75" style="border-radius:6px; background-image: url({{ first_section.about_pic.url }});">
+        <div class="position-absolute bottom-0 start-0 start-md-auto end-0 text-center text-md-start p-4 mx-auto mx-md-0" style="max-width: 25rem;">
+          <div class="d-inline-block bg-white rounded-3 p-3 p-md-5">
+            <div class="d-none d-md-block mb-10">
+              <h3>How does Vidicu work?</h3>
+              <p>Learn more about Vidicu.</p>
+            </div>
+
+            <a class="link link-dark" href="https://www.youtube.com/watch?v=Ubd3m4o0Rkc" role="button" data-fslightbox="youtube-video"><i class="bi-play-circle me-1"></i> Watch our story</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-md-none text-center mt-5">
+        <h3>How does Vidicu work?</h3>
+        <p>Learn more about Vidicu.</p>
+      </div>
+    </div>
+    <!-- End Hero -->
+
+    <!-- Features -->
+    <div class="container content-space-2 content-space-lg-3">
+      <div class="row justify-content-lg-between">
+        <div class="col-md-6 mb-5 mb-md-0">
+          <h2> {{ second_section.title1}} </h2>
+           {% autoescape off %} 
+              {{ second_section.content1 }}
+           {% endautoescape %}
+        </div>
+        <!-- End Col -->
+
+        <div class="col-md-6 col-lg-5">
+          <div class="d-grid gap-5">
+            <!-- Media -->
+            <div class="d-flex">
+              <div class="flex-shrink-0">
+                <i class="bi-building fs-2"></i>
+              </div>
+
+              <div class="flex-grow-1 ms-4">
+                <h5>{{ second_section.title2}}</h5>
+                <p>
+                  {% autoescape off %} 
+                    {{ second_section.content2 }}
+                  {% endautoescape %}
+                </p>
+              </div>
+            </div>
+            <!-- End Media -->
+
+            <!-- Media -->
+            <div class="d-flex">
+              <div class="flex-shrink-0">
+                <i class="bi-people fs-2"></i>
+              </div>
+
+              <div class="flex-grow-1 ms-4">
+                <h5>{{ second_section.title3 }}</h5>
+                <p>
+                  {% autoescape off %} 
+                    {{ second_section.content3 }}
+                  {% endautoescape %}
+                </p>
+              </div>
+            </div>
+            <!-- End Media -->
+
+            <!-- Media -->
+            <div class="d-flex">
+              <div class="flex-shrink-0">
+                <i class="bi-shield-check fs-2"></i>
+              </div>
+
+              <div class="flex-grow-1 ms-4">
+                <h5>{{ second_section.title4 }}</h5>
+                <p>
+                  {% autoescape off %} 
+                    {{ second_section.content4 }}
+                  {% endautoescape %}
+                </p>
+              </div>
+            </div>
+            <!-- End Media -->
+          </div>
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Features -->
+
+
+    <!-- Features -->
+    <div class="container content-space-2 content-space-lg-3">
+      <div class="row justify-content-lg-between align-items-md-center">
+        <div class="col-md-6 mb-10 mb-md-0">
+          <h2>{{ fourth_section.title }}</h2>
+          
+          {% autoescape off %}  
+              {{ fourth_section.content }}
+          {% endautoescape %}
+
+         
+          <!-- End Row -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col-md-6 col-lg-5">
+          <div class="row justify-content-end">
+
+  
+              <div class="col-3 mb-4">
+                <!-- Logo -->
+                <div class="d-block avatar avatar-lg rounded-circle shadow-sm p-3 mt-n3 ms-5">
+                  <img class="avatar-img" src="{{ aboutus_icons.pic1.url }}" width="{{  aboutus_icons.pic1.width }}" height="{{  aboutus_icons.pic1.height }}" alt="{{  aboutus_icons.pic1_description }}">
+                </div>
+                <!-- End Logo -->
+              </div>
+
+            
+        
+            <!-- End Col -->
+
+            <div class="col-4 mb-4">
+              <!-- Logo -->
+              <div class="d-block avatar avatar-xl rounded-circle shadow-sm p-4 mx-auto mt-5">
+                <img class="avatar-img" src="{{ aboutus_icons.pic2.url }}" width="{{  aboutus_icons.pic2.width }}" height="{{  aboutus_icons.pic2.height }}" alt="{{  aboutus_icons.pic2_description }}">
+              </div>
+              <!-- End Logo -->
+            </div>
+            <!-- End Col -->
+
+            <div class="col-4 mb-4">
+              <!-- Logo -->
+              <div class="d-block avatar avatar-xl rounded-circle shadow-sm p-4 ms-auto">
+                <img class="avatar-img" src="{{ aboutus_icons.pic3.url }}" width="{{  aboutus_icons.pic3.width }}" height="{{  aboutus_icons.pic3.height }}" alt="{{  aboutus_icons.pic3_description }}">
+              </div>
+              <!-- End Logo -->
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+
+          <div class="row">
+            <div class="col-3 offset-1 my-4">
+              <!-- Logo -->
+              <div class="d-block avatar avatar-xl rounded-circle shadow-sm p-4 ms-auto">
+                <img class="avatar-img" src="{{ aboutus_icons.pic4.url }}" width="{{  aboutus_icons.pic4.width }}" height="{{  aboutus_icons.pic4.height }}" alt="{{  aboutus_icons.pic4_description }}">
+              </div>
+              <!-- End Logo -->
+            </div>
+            <!-- End Col -->
+
+            <div class="col-3 offset-2 my-4">
+              <!-- Logo -->
+              <div class="d-block avatar avatar-xl rounded-circle shadow-sm p-4 ms-auto">
+                <img class="avatar-img" src="{{ aboutus_icons.pic5.url }}" width="{{  aboutus_icons.pic5.width }}" height="{{  aboutus_icons.pic5.height }}" alt="{{  aboutus_icons.pic5_description }}">
+              </div>
+              <!-- End Logo -->
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+
+          <div class="row">
+            <div class="col-6">
+              <!-- Logo -->
+              <div class="d-block avatar avatar-lg rounded-circle shadow-sm p-3 ms-auto">
+                <img class="avatar-img" src="{{ aboutus_icons.pic6.url }}" width="{{  aboutus_icons.pic6.width }}" height="{{  aboutus_icons.pic6.height }}" alt="{{  aboutus_icons.pic6_description }}">
+              </div>
+              <!-- End Logo -->
+            </div>
+            <!-- End Col -->
+
+            <div class="col-6 mt-6">
+              <!-- Logo -->
+              <div class="d-block avatar avatar-xl rounded-circle shadow-sm p-4 ms-auto">
+                <img class="avatar-img" src="{{ aboutus_icons.pic7.url }}" width="{{  aboutus_icons.pic7.width }}" height="{{  aboutus_icons.pic7.height }}" alt="{{  aboutus_icons.pic7_description }}">
+              </div>
+              <!-- End Logo -->
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Features -->
+
+    <!-- Team -->
+    <div class="container content-space-b-1 content-space-b-lg-3">
+      <!-- Heading -->
+      <div class="w-lg-65 text-center mx-lg-auto mb-5 mb-sm-7 mb-lg-10">
+        <h2>Our leadership</h2>
+      </div>
+      <!-- End Heading -->
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+        <div class="col mb-10">
+          <!-- Team -->
+          <div class="w-sm-65 text-center mx-auto">
+            <img class="img-fluid rounded-3 mb-4" src="{{ fifth_section.leaderpic1.url }}" width="{{ fifth_section.leaderpic1.width }}" height="{{ fifth_section.leaderpic1.height }}" alt="{{ fifth_section.leaderpic1_description }}">
+            <h5 class="mb-1">{{ fifth_section.leadername1 }}</h5>
+            <span class="d-block">{{ fifth_section.leadertitle1 }}</span>
+          </div>
+          <!-- End Team -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col mb-10">
+          <!-- Team -->
+          <div class="w-sm-65 text-center mx-auto">
+            <img class="img-fluid rounded-3 mb-4" src="{{ fifth_section.leaderpic2.url }}" width="{{ fifth_section.leaderpic2.width }}" height="{{ fifth_section.leaderpic2.height }}" alt="{{ fifth_section.leaderpic2_description }}">
+            <h5 class="mb-1">{{ fifth_section.leadername2 }}</h5>
+            <span class="d-block">{{ fifth_section.leadertitle2 }}</span>
+          </div>
+          <!-- End Team -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col mb-10">
+          <!-- Team -->
+          <div class="w-sm-65 text-center mx-auto">
+            <img class="img-fluid rounded-3 mb-4" src="{{ fifth_section.leaderpic3.url }}" width="{{ fifth_section.leaderpic3.width }}" height="{{ fifth_section.leaderpic3.height }}" alt="{{ fifth_section.leaderpic3_description }}">
+            <h5 class="mb-1">{{ fifth_section.leadername3 }}</h5>
+            <span class="d-block">{{ fifth_section.leadertitle3 }}</span>
+          </div>
+          <!-- End Team -->
+        </div>
+        <!-- End Col -->
+
+
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Team -->
+
+    <!-- CTA -->
+    <div class="container content-space-b-2 content-space-b-lg-3">
+      <div class="w-lg-75 text-center mx-lg-auto">
+        <figure class="mb-7">
+          <img class="img-fluid" src="{% static 'assets/svg/illustrations/plane.svg' %}" alt="Kite" style="width: 10rem;">
+        </figure>
+        <h2 class="mb-7">We're always looking for talented freelancers to work with. Get in touch if you think you’d be a good fit!</h2>
+        <a class="link link-pointer" href="https://vidicu.live/careers/#explore">View all opening positions</a>
+      </div>
+    </div>
+    <!-- End CTA -->
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== FOOTER ========== -->
+    {% include 'footer.html' %}
+  <!-- ========== END FOOTER ========== -->
+
+  <!-- ========== SECONDARY CONTENTS ========== -->
+  <!-- Go To -->
+  <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;" data-hs-go-to-options='{
+       "offsetTop": 700,
+       "position": {
+         "init": {
+           "right": "2rem"
+         },
+         "show": {
+           "bottom": "2rem"
+         },
+         "hide": {
+           "bottom": "-2rem"
+         }
+       }
+     }'>
+    <i class="bi-chevron-up"></i>
+  </a>
+  <!-- ========== END SECONDARY CONTENTS ========== -->
+
+  <!-- JS Global Compulsory  -->
+  <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="{% static 'assets/vendor/hs-header/dist/hs-header.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-go-to/dist/hs-go-to.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/fslightbox/index.js' %}"></script>
+
+  <!-- JS Unify -->
+  <script src="{% static 'assets/js/theme.min.js' %}"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    (function() {
+      // INITIALIZATION OF NAVBAR
+      // =======================================================
+      new HSHeader('#header').init()
+
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      const megaMenu = new HSMegaMenu('.js-mega-menu', {
+        desktop: {
+          position: 'left'
+        }
+      })
+
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      new HSGoTo('.js-go-to')
+    })()
+  </script>
+</body>
+
+
+</html>

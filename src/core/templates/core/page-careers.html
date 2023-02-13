@@ -1,0 +1,516 @@
+  {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>Careers | Vidicu </title>
+
+  <!-- Favicon -->
+  <link rel="icon"  type="image/png" href="{% static 'favicon.png' %}">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-icons/font/bootstrap-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css' %}">
+
+  <!-- CSS Unify Template -->
+  <link rel="stylesheet" href="{% static 'assets/css/theme.min.css' %}">
+</head>
+
+<body>
+  <!-- ========== HEADER ========== -->
+    
+    <header id="header" class="navbar navbar-expand-lg navbar-end navbar-light navbar-absolute-top navbar-show-hide" data-hs-header-options='{
+      "fixMoment": 0,
+      "fixEffect": "slide"
+    }'>
+    <div class="container">
+    <nav class="js-mega-menu navbar-nav-wrap">
+    <!-- Default Logo -->
+    <a class="navbar-brand" href="{% url 'core:home' %}" aria-label="Vidicu">
+    <img class="navbar-brand-logo" src="{% static 'icons/logo.png' %}" alt="Vidicu Logo">
+    </a>
+    <!-- End Default Logo -->
+
+    <!-- Toggler -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-default">
+      <i class="bi-list"></i> 
+    </span>
+    <span class="navbar-toggler-toggled">
+      <i class="bi-x"></i>
+    </span>
+    </button>
+    <!-- End Toggler -->
+
+    <!-- Collapse -->
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <div class="navbar-absolute-top-scroller">
+      <ul class="navbar-nav nav-pills">
+        
+        <!-- Pages -->
+        <li class="hs-has-mega-menu nav-item">
+          <a id="pagesMegaMenu" class="hs-mega-menu-invoker nav-link" href="{% url 'core:about_us' %}" role="button" aria-expanded="false"><span style="color:#140202"> About </span></a>
+
+      
+        </li>
+        <!-- End Pages -->
+
+        <!-- Blog -->
+        <li class="hs-has-mega-menu nav-item" data-hs-mega-menu-item-options='{
+              "desktop": {
+                "maxWidth": "50rem"
+              }
+            }'>
+          <a id="blogMegaMenu" class="hs-mega-menu-invoker nav-link" href="{% url 'publishapp:post_list'  %}" role="button" aria-expanded="false"><span style="color:#140202"> Blog </span> </a>
+
+        
+        </li>
+        <!-- End Blog -->
+
+        <!-- Docs -->
+        <li class="hs-has-mega-menu nav-item" data-hs-mega-menu-item-options='{
+              "desktop": {
+                "maxWidth": "20rem"
+              }
+            }'>
+          <a id="docsMegaMenu" class="hs-mega-menu-invoker nav-link" href="{% url 'core:contact_us' %}" role="button" aria-expanded="false"><span style="color:#140202"> ContactUs </span> </a>
+
+        </li>
+        <!-- End Docs -->
+
+        <!-- Log in -->
+        <li class="nav-item ms-lg-auto">
+          <a class="btn btn-white me-2 me-lg-0" href="{% url 'core:pricing' %}">Pricing</a>
+          <a class="btn btn-primary d-lg-none" href="{% url 'core:download_app'  %}">Download App</a>
+        </li>
+        <!-- End Log in -->
+
+        <!-- Sign up -->
+        <li class="nav-item">
+          <a class="btn btn-primary d-none d-lg-inline-block" href="{% url 'core:download_app'  %}">Download App</a>
+        </li>
+        <!-- End Sign up -->
+      </ul>
+    </div>
+    </div>
+    <!-- End Collapse -->
+    </nav>
+    </div>
+    </header>
+
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+    <!-- Hero -->
+    <div class="d-flex bg-img-center" style="background-image: url({% static 'assets/img/1920x800/img2.jpg' %});">
+      <div class="container d-flex justify-content-end flex-column min-vh-lg-75 content-space-1 content-space-lg-b-3">
+        <div class="w-lg-65">
+          <span class="fw-bold d-block text-white mb-3">{{ first_row.first_text }}  <a class="badge bg-dark text-white rounded-pill ms-1" href="#openingsSection">View opening</a></span>
+          <h1 class="display-4 text-white">{{ first_row.second_text }}</h1>
+          <p class="lead text-white">{{ first_row.third_text }}</p>
+        </div>
+      </div>
+    </div>
+    <!-- End Hero -->
+
+    <!-- Card Grid -->
+    <div class="container content-space-t-1 content-space-t-lg-3">
+      <!-- Heading -->
+      <div class="w-lg-65 text-center mx-lg-auto mb-5 mb-sm-7 mb-lg-10">
+        <h2>{{ second_row.heading }}</h2>
+        <p>{{ second_row.subtitle }}</p>
+      </div>
+      <!-- End Heading -->
+
+      <div class="row row-cols-2 row-cols-lg-4 gx-2 gx-md-4">
+        <div class="col mb-2 mb-md-4">
+          <!-- Card -->
+          <a class="card card-borderless card-transition-zoom bg-soft-primary h-100" href="#">
+            <div class="card-transition-zoom-item">
+              <img class="card-img" src="{% static 'assets/svg/components/card-7.svg' %}" alt="Image Description">
+            </div>
+            <div class="card-body">
+              <span class="card-subtitle text-body"><span class="fw-bold text-dark">{{ second_row.first_text }}</span></span>
+              <h4 class="card-title">{{ second_row.first_text_subtitle }}</h4>
+            </div>
+          </a>
+          <!-- End Card -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col mb-2 mb-md-4">
+          <!-- Card -->
+          <a class="card card-borderless card-transition-zoom bg-soft-primary h-100" href="#explore">
+            <div class="card-transition-zoom-item">
+              <img class="card-img" src="{% static 'assets/svg/components/card-8.svg' %}" alt="Image Description">
+            </div>
+            <div class="card-body">
+              <span class="card-subtitle text-body"><span class="fw-bold text-dark">{{ second_row.second_text }}</span></span>
+              <h4 class="card-title">{{ second_row.second_text_subtitle }}</h4>
+            </div>
+          </a>
+          <!-- End Card -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col mb-2 mb-md-4">
+          <!-- Card -->
+          <a class="card card-borderless card-transition-zoom bg-soft-primary h-100" href="#explore">
+            <div class="card-transition-zoom-item">
+              <img class="card-img" src="{% static 'assets/svg/components/card-10.svg' %}" alt="Image Description">
+            </div>
+            <div class="card-body">
+              <span class="card-subtitle text-body"><span class="fw-bold text-dark">{{ second_row.third_text }}</span></span>
+              <h4 class="card-title">{{ second_row.third_text_subtitle }}</h4>
+            </div>
+          </a>
+          <!-- End Card -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col mb-2 mb-md-4">
+          <!-- Card -->
+          <a class="card card-borderless card-transition-zoom bg-soft-primary h-100" href="#explore">
+            <div class="card-transition-zoom-item">
+              <img class="card-img" src="{% static 'assets/svg/components/card-9.svg' %}" alt="Image Description">
+            </div>
+            <div class="card-body">
+              <span class="card-subtitle text-body"><span class="fw-bold text-dark">{{ second_row.fourth_text }}</span></span>
+              <h4 class="card-title">{{ second_row.fourth_text_subtitle }}</h4>
+            </div>
+          </a>
+          <!-- End Card -->
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Card Grid -->
+
+    <!-- Step Features -->
+    <div class="container content-space-1 content-space-lg-3">
+      <!-- Heading -->
+      <div class="w-lg-65 text-center mx-lg-auto mb-5 mb-sm-7 mb-lg-10">
+        <h2>{{ third_row.heading }}</h2>
+        <p>{{ third_row.subtitle }}</p>
+      </div>
+      <!-- End Heading -->
+
+      <div class="w-lg-75 mx-lg-auto">
+        <!-- List Timeline -->
+        <ul class="list-unstyled list-timeline list-py-3">
+          <li class="list-timeline-item">
+            <!-- Card -->
+            <div class="card card-lg">
+              <div class="card-body">
+                <!-- Media -->
+                <div class="d-flex">
+                  <div class="flex-shrink-0">
+                    <i class="bi-file-earmark-check text-dark fs-2"></i>
+                  </div>
+                  <div class="flex-grow-1 ms-4">
+                    <h4 class="card-title"><span class="fs-2 text-primary">01.</span> {{ third_row.first_text }}</h4>
+                    <p class="card-text">{{ third_row.first_text_subtext }}</p>
+                  </div>
+                </div>
+                <!-- End Media -->
+              </div>
+            </div>
+            <!-- End Card -->
+          </li>
+
+          <li class="list-timeline-item ms-auto">
+            <!-- Card -->
+            <div class="card card-lg">
+              <div class="card-body">
+                <!-- Media -->
+                <div class="d-flex">
+                  <div class="flex-shrink-0">
+                    <i class="bi-clock-history text-dark fs-2"></i>
+                  </div>
+                  <div class="flex-grow-1 ms-4">
+                    <h4 class="card-title"><span class="fs-2 text-primary">02.</span> {{ third_row.second_text }}</h4>
+                    <p class="card-text">{{ third_row.second_text_subtext }}</p>
+                  </div>
+                </div>
+                <!-- End Media -->
+              </div>
+            </div>
+            <!-- End Card -->
+          </li>
+
+          <li class="list-timeline-item">
+            <!-- Card -->
+            <div class="card card-lg">
+              <div class="card-body">
+                <!-- Media -->
+                <div class="d-flex">
+                  <div class="flex-shrink-0">
+                    <i class="bi-pencil-square text-dark fs-2"></i>
+                  </div>
+                  <div class="flex-grow-1 ms-4">
+                    <h4 class="card-title"><span class="fs-2 text-primary">03.</span> {{ third_row.third_text }}</h4>
+                    <p class="card-text">{{ third_row.third_text_subtext }}</p>
+                  </div>
+                </div>
+                <!-- End Media -->
+              </div>
+            </div>
+            <!-- End Card -->
+          </li>
+
+          <li class="list-timeline-item ms-auto">
+            <!-- Card -->
+            <div class="card card-lg">
+              <div class="card-body">
+                <!-- Media -->
+                <div class="d-flex">
+                  <div class="flex-shrink-0">
+                    <i class="bi-hand-thumbs-up text-dark fs-2"></i>
+                  </div>
+                  <div class="flex-grow-1 ms-4">
+                    <h4 class="card-title"><span class="fs-2 text-primary">04.</span> {{ third_row.fourth_text }}</h4>
+                    <p class="card-text">{{ third_row.second_text_subtext }}</p>
+                  </div>
+                </div>
+                <!-- End Media -->
+              </div>
+            </div>
+            <!-- End Card -->
+          </li>
+        </ul>
+        <!-- End List Timeline -->
+      </div>
+    </div>
+    <!-- End Step Features -->
+
+
+    <!-- Icon Blocks -->
+    <div class="container content-space-1 content-space-lg-3">
+      <!-- Heading -->
+      <div class="w-lg-65 text-center mx-lg-auto mb-5 mb-sm-7 mb-lg-10">
+        <h2>{{ fourth_row.heading }}</h2>
+        <p>{{ fourth_row.subtitle }}</p>
+      </div>
+      <!-- End Heading -->
+
+      <div class="row justify-content-lg-between">
+        <div class="col-sm-6 col-lg-5 mb-5">
+          <!-- Icon Block -->
+          <div class="d-flex">
+            <div class="flex-shrink-0">
+              <i class="bi-circle-square fs-1 text-dark"></i>
+            </div>
+            <div class="flex-grow-1 ms-5">
+              <h5>{{ fourth_row.first_text }}</h5>
+              <p>{{ fourth_row.first_text_subtext }}</p>
+            </div>
+          </div>
+          <!-- End Icon Block -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg-5 mb-5">
+          <!-- Icon Block -->
+          <div class="d-flex">
+            <div class="flex-shrink-0">
+              <i class="bi-cup fs-1 text-dark"></i>
+            </div>
+            <div class="flex-grow-1 ms-5">
+              <h5>{{ fourth_row.second_text }}</h5>
+              <p>{{ fourth_row.second_text_subtext }}</p>
+            </div>
+          </div>
+          <!-- End Icon Block -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg-5 mb-5">
+          <!-- Icon Block -->
+          <div class="d-flex">
+            <div class="flex-shrink-0">
+              <i class="bi-bar-chart fs-1 text-dark"></i>
+            </div>
+            <div class="flex-grow-1 ms-5">
+              <h5>{{ fourth_row.third_text }}</h5>
+              <p>{{ fourth_row.third_text_subtext }}</p>
+            </div>
+          </div>
+          <!-- End Icon Block -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg-5 mb-5">
+          <!-- Icon Block -->
+          <div class="d-flex">
+            <div class="flex-shrink-0">
+              <i class="bi-check2-circle fs-1 text-dark"></i>
+            </div>
+            <div class="flex-grow-1 ms-5">
+              <h5>{{ fourth_row.fourth_text }}</h5>
+              <p>{{ fourth_row.fourth_text_subtext }}</p>
+            </div>
+          </div>
+          <!-- End Icon Block -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg-5 mb-5 mb-sm-0">
+          <!-- Icon Block -->
+          <div class="d-flex">
+            <div class="flex-shrink-0">
+              <i class="bi-bell fs-1 text-dark"></i>
+            </div>
+            <div class="flex-grow-1 ms-5">
+              <h5>{{ fourth_row.fifth_text }}</h5>
+              <p>{{ fourth_row.fifth_text_subtext }}</p>
+            </div>
+          </div>
+          <!-- End Icon Block -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg-5">
+          <!-- Icon Block -->
+          <div class="d-flex">
+            <div class="flex-shrink-0">
+              <i class="bi-bicycle fs-1 text-dark"></i>
+            </div>
+            <div class="flex-grow-1 ms-5">
+              <h5>{{ fourth_row.sixth_text }}</h5>
+              <p>{{ fourth_row.sixth_text_subtext }}</p>
+            </div>
+          </div>
+          <!-- End Icon Block -->
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Icon Blocks -->
+
+
+    <!-- List Directory -->
+    <div id="openingsSection" class="container content-space-t-2 content-space-lg-3 content-space-b-1">
+      <!-- Heading -->
+      <div class="w-lg-65 text-center mx-lg-auto mb-5 mb-sm-7 mb-lg-10">
+        <h2 id="explore">{{ fifth_row.heading }}</h2>
+        <p>{{ fifth_row.title }}</p>
+      </div>
+      <!-- End Heading -->
+
+      <div class="d-grid gap-3">
+        {% for row in sixth_row %}
+        <!-- Card -->
+          <a class="card" href="{{ row.get_absolute_url }}">
+            <div class="card-body">
+              <div class="row">
+
+              
+                <div class="col-md-4 mb-2 mb-md-0">
+                  <span class="h6">{{ row.department }}</span>
+                </div>
+                <!-- End Col -->
+                
+
+                <div class="col-sm-5 col-md-2 mb-2 mb-sm-0">
+                  <span class="text-body">{{ row.location }}</span>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-sm-5 col-md-4 mb-2 mb-sm-0">
+                  <span class="text-body">{{ row.job_title }}</span>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-sm-2 text-sm-end">
+                  <span class="link link-pointer">Apply</span>
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+            </div>
+          </a>
+        <!-- End Card -->
+        {% endfor %}
+
+ 
+      </div>
+
+    </div>
+    <!-- End List Directory -->
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== FOOTER ========== -->
+  {% include 'footer.html' %}
+  <!-- ========== END FOOTER ========== -->
+
+  <!-- ========== SECONDARY CONTENTS ========== -->
+  <!-- Go To -->
+  <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;" data-hs-go-to-options='{
+       "offsetTop": 700,
+       "position": {
+         "init": {
+           "right": "2rem"
+         },
+         "show": {
+           "bottom": "2rem"
+         },
+         "hide": {
+           "bottom": "-2rem"
+         }
+       }
+     }'>
+    <i class="bi-chevron-up"></i>
+  </a>
+  <!-- ========== END SECONDARY CONTENTS ========== -->
+
+  <!-- JS Global Compulsory  -->
+  <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="{% static 'assets/vendor/hs-header/dist/hs-header.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-go-to/dist/hs-go-to.min.js' %}"></script>
+
+  <!-- JS Unify -->
+  <script src="{% static 'assets/js/theme.min.js' %}"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    (function() {
+      // INITIALIZATION OF NAVBAR
+      // =======================================================
+      new HSHeader('#header').init()
+
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      const megaMenu = new HSMegaMenu('.js-mega-menu', {
+        desktop: {
+          position: 'left'
+        }
+      })
+
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      new HSGoTo('.js-go-to')
+    })()
+  </script>
+</body>
+
+
+</html>

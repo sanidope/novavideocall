@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>Careers: Role Overview | Vidicu </title>
+
+  <!-- Favicon -->
+  <link rel="icon"  type="image/png" href="{% static 'favicon.png' %}">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-icons/font/bootstrap-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css' %}">
+
+  <!-- CSS Unify Template -->
+  <link rel="stylesheet" href="{% static 'assets/css/theme.min.css' %}">
+</head>
+
+<body>
+  <!-- ========== HEADER ========== -->
+  {% include 'header.html' %}
+
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+    <!-- Content -->
+    <div class="container content-space-1 content-space-b-lg-3">
+      <div class="row mb-7">
+        <div class="col-md mb-3 mb-md-0">
+          <div class="mb-3">
+              <br/>
+          </div>
+
+          <h1 class="mb-0">{{ sixth_row.job_title|capfirst }}</h1>
+        </div>
+        <!-- End Col -->
+
+        <div class="col-md-auto align-self-md-end">
+          <a class="btn btn-primary" href="#">Apply now</a>
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+
+      <div class="row">
+        <div class="col-lg-3 order-lg-2 mb-5 mb-lg-0">
+          <div id="stickyBlockStartPoint">
+            <!-- Card -->
+            <div class="js-sticky-block card card-borderless bg-soft-dark" data-hs-sticky-block-options='{
+                 "parentSelector": "#stickyBlockStartPoint",
+                 "targetSelector": "#header",
+                 "breakpoint": "lg",
+                 "startPoint": "#stickyBlockStartPoint",
+                 "endPoint": "#stickyBlockEndPoint",
+                 "stickyOffsetTop": 20
+               }'>
+              <div class="card-body">
+                <dl>
+                  <dt>Application Deadline:</dt>
+                  <dd>{{ sixth_row.application_deadline|date:"Y M D"}}</dd>
+                  <dt>Department:</dt>
+                  <dd>{{ sixth_row.department }}</dd>
+                  <dt>Employment Type:</dt>
+                  <dd>{{ sixth_row.employment_type|capfirst}}</dd>
+                  <dt>Location:</dt>
+                  <dd>{{ sixth_row.location }}</dd>
+                  <dt>Compensation:</dt>
+                  <dd>{{ sixth_row.compensation }}</dd>
+                 
+                </dl>
+
+                <hr>
+              </div>
+            </div>
+            <!-- End Card -->
+          </div>
+        </div>
+        <!-- End Col -->
+
+        <div class="col-lg-9">
+            {% autoescape off %}
+                {{ sixth_row.body }}
+            {% endautoescape %}
+
+
+          <!-- End Sticky End Point -->
+          <div id="stickyBlockEndPoint"></div>
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+
+    </div>
+    <!-- End Content -->
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== FOOTER ========== -->
+  {% include 'footer.html' %}
+  <!-- ========== END FOOTER ========== -->
+
+  <!-- ========== SECONDARY CONTENTS ========== -->
+  <!-- Go To -->
+  <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;" data-hs-go-to-options='{
+       "offsetTop": 700,
+       "position": {
+         "init": {
+           "right": "2rem"
+         },
+         "show": {
+           "bottom": "2rem"
+         },
+         "hide": {
+           "bottom": "-2rem"
+         }
+       }
+     }'>
+    <i class="bi-chevron-up"></i>
+  </a>
+  <!-- ========== END SECONDARY CONTENTS ========== -->
+
+  <!-- JS Global Compulsory  -->
+  <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="{% static 'assets/vendor/hs-header/dist/hs-header.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-go-to/dist/hs-go-to.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-sticky-block/dist/hs-sticky-block.min.js' %}"></script>
+
+  <!-- JS Unify -->
+  <script src="{% static 'assets/js/theme.min.js' %}"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    (function() {
+      // INITIALIZATION OF NAVBAR
+      // =======================================================
+      new HSHeader('#header').init()
+
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      const megaMenu = new HSMegaMenu('.js-mega-menu', {
+        desktop: {
+          position: 'left'
+        }
+      })
+
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      new HSGoTo('.js-go-to')
+
+
+      // INITIALIZATION OF STICKY BLOCKS
+      // =======================================================
+       new HSStickyBlock('.js-sticky-block', {
+        targetSelector: document.getElementById('header').classList.contains('navbar-fixed') ? '#header' : null
+      })
+    })()
+  </script>
+</body>
+
+
+</html>

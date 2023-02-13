@@ -1,0 +1,584 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="author" content="Vidicu" />
+  <meta name=”robots” content="index, follow">
+  <meta name="template" content="home-page"/>
+  <link rel="canonical" href="{{ og_url }}">
+
+  <meta property="twitter:card" content="{{ tw_card }}" />
+  <meta property="twitter:url" content="https://vidicu.live/"/>
+  <meta property="twitter:title" content="{{ tw_title }}" />
+  <meta name="twitter:description" content="{{ tw_description }}">
+  <meta name="twitter:image" content="{{ tw_image }}">
+  <meta property="twitter:image:alt" content="https://vidicu.live/static/icons/logo.png">
+  <meta name="twitter:site" content="{{ tw_site }}">
+  
+
+  <meta property="og:type" content="{{ og_type }}" />
+  <meta property="og:title" content="{{ og_title }}" />
+  <meta property="og:description" content="{{ seo_description }}" />
+  <meta property="og:image" content="{{ og_image }}" />
+  <meta property="og:url" content="{{ og_url }}" />
+  <meta property="og:site_name" content="{{ og_site_name }}" />
+  <meta property="og:locale" content="{{ og_locale }}" />
+  <meta property="og:locale:alternate" content="{{ og_locale_alt }}" />
+  <meta property="og:video" content="{% static 'video/vidicu.mp4'  %}" />
+
+
+  <meta name="description" content="{{ seo_description }}"/> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="vidicu, vidicu.live, ai powered video conferencing, ai powered, video calls, virtual meetings, group video chat, calling, meetings, webinars, video collaboration, live translate, group messaging, virtual meetings, cloud meeting" name="keywords">
+  
+  <!-- Title -->
+  <title> {{ seo_title }} </title>
+
+  <!-- Favicon -->
+  <link rel="icon"  type="image/png" href="{% static 'favicon.png' %}">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-icons/font/bootstrap-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}">
+
+
+  <link rel="stylesheet" href="{% static 'assets/css/theme.min.css' %}">
+  <style type="text/css">
+    #videostyle {
+      max-width: 100% !important;
+      height: auto !important;
+      border-radius:5px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ========== HEADER ========== -->
+  {% include "header.html" %}
+
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+    <!-- Hero -->
+    <div class="container content-space-t-3">
+      <div class="row justify-content-lg-between align-items-lg-center">
+        <div class="col-lg-5 mb-5 mb-lg-0">  
+          <div class="mb-5">
+            <h1 class="display-4 text-dark mb-5"> <span class="text-primary">The Rise  </span> of AI-Powered Video<span class="text-primary"> Platforms.</span></h1>
+            <p class="fs-3">Calling, meetings, messaging, and events in the cloud for teams of all sizes.</p>
+          </div>
+
+          <div class="d-grid d-sm-flex gap-3 mb-5">
+            <a class="btn btn-primary" href="#">Request demo</a>
+            <a class="btn btn-ghost-dark btn-pointer" href="#">Contact Sales</a>
+          </div>
+        </div>
+        <!-- End Col -->
+
+        <div class="col-lg-6">
+          <div class="position-relative">
+            <div class="position-relative">
+              <video id="videostyle" class="embed-responsive-item" src="{% static 'video/vidicu.mp4' %}"   poster="{% static 'vidicu_poster.jpg'  %}" width="600px" height="390px" preload="metadata" controls />
+              
+
+            </div>
+
+            <!-- Media -->
+            <div class="d-inline-block position-absolute top-0 start-0 bg-white w-100 rounded-pill shadow-sm p-2 mt-5 ms-n5" style="max-width: 12rem;">
+              <div class="d-flex align-items-center">
+                <div class="flex-shrink-0">
+                  <span class="avatar avatar-sm avatar-circle">
+                    <img class="avatar-img" src="{% static 'assets/img/160x160/img10.jpg' %}" >
+                  </span>
+                </div>
+                <div class="flex-grow-1 ms-2">
+                  <div class="fs-5 fw-bold mb-0">Julia</div>
+                  <span class="d-block fs-6">Secure by design.
+                    Private by default</span>
+                </div>
+              </div>
+            </div>
+            <!-- End Media -->
+
+            <!-- Media -->
+            
+            <!-- End Media -->
+          </div>
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Hero -->
+
+    <!-- Icon Blocks -->
+    <div class="container content-space-t-2 content-space-t-lg-3">
+      <div class="row">
+        <div class="col-sm-6 col-lg mb-5 mb-lg-0">
+          <!-- Icon Block -->
+          <div class="text-center">
+            <div class="mb-3">
+              <img src="{% static 'icons/flexible.png'  %}" alt="adaptable" width="40px" height="40px" />
+            </div>
+
+            <h5>Flexible</h5>
+            <span class="fs-4 d-block">{{ second_column.first_text }}</span>
+          </div>
+          <!-- End Icon Block -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg mb-5 mb-lg-0">
+          <!-- Icon Block -->
+          <div class="text-center">
+            <div class="mb-3">
+              <img src="{% static 'icons/inclusive.png'  %}" alt="equal experiences"  width="40px" height="40px"/>
+            </div>
+
+            <h5>Inclusive</h5>
+            <span class="fs-4 d-block">{{ second_column.second_text }}</span>
+          </div>
+          <!-- End Icon Block -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg mb-5 mb-sm-0">
+          <!-- Icon Block -->
+          <div class="text-center">
+            <div class="mb-3">
+              <img src="{% static 'icons/secure.png'  %}" alt="secure by design" width="40px" height="40px"/>
+            </div>
+
+            <h5>Secure</h5>
+            <span class="fs-4 d-block">{{ second_column.third_text }}</span>
+          </div>
+          <!-- End Icon Block -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg">
+          <!-- Icon Block -->
+          <div class="text-center">
+            <div class="mb-3">
+              <img src="{% static 'icons/support.png'  %}" alt="support" width="40px" height="40px"/>
+            </div>
+
+            <h5>24/7 Support</h5>
+            <span class="fs-4 d-block">{{ second_column.fourth_text }}</span>
+          </div>
+          <!-- End Icon Block -->
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Icon Blocks -->
+
+    <!-- Features -->
+    <div class="overflow-hidden content-space-t-lg-1 content-space-b-lg-2">
+      <div class="container content-space-2 content-space-b-lg-3">
+        <div class="row align-items-lg-center">
+          <div class="col-lg-7 mb-10 mb-lg-0">
+            <div class="position-relative">
+              <img class="img-fluid w-75 rounded-3" src="{% static 'assets/index/assistance.jpg' %}" width="481" height="481" alt="live assistant">
+
+              <div class="position-absolute bottom-0 end-0 mb-n10 me-5">
+                <div class="d-flex justify-content-end">
+                  <img class="img-fluid w-65 shadow rounded-3" src="{% static 'assets/index/office.jpg' %}" width="481" height="481" alt="office collaboration">
+                </div>
+              </div>
+
+              <!-- SVG Shape -->
+              <figure class="position-absolute bottom-0 start-0 zi-n1 mb-n7 ms-n7" style="width: 10rem;">
+                <img class="img-fluid" src="{% static 'assets/svg/components/dots.svg' %}" width="160px" height="150px" alt="deco">
+              </figure>
+              <!-- End SVG Shape -->
+            </div>
+          </div>
+          <!-- End Col -->
+
+          <div class="col-lg-5 mt-7 mt-sm-10 mt-lg-0">
+            <div class="ps-lg-5">
+              <div class="mb-5">
+                <h2>{{ third_column.heading }}</h2>
+                <p>{{ third_column.subtitle}}</p>
+              </div>
+
+              <div class="row border-bottom pb-3 mb-3">
+                <div class="col-6">
+                  <a class="link link-secondary link-pointer" href="#">{{ third_column.first_text}}</a>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-6">
+                  <a class="link link-secondary link-pointer" href="#">{{ third_column.second_text}}</a>
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+
+              <div class="row border-bottom pb-3 mb-3">
+                <div class="col-6">
+                  <a class="link link-secondary link-pointer" href="#">{{ third_column.third_text}}</a>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-6">
+                  <a class="link link-secondary link-pointer" href="#">{{ third_column.fourth_text}}</a>
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+
+              <div class="row">
+                <div class="col-6">
+                  <a class="link link-secondary link-pointer" href="#">{{ third_column.fifth_text}}</a>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-6">
+                  <a class="link link-secondary link-pointer" href="#">{{ third_column.sixth_text}}</a>
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+            </div>
+          </div>
+          <!-- End Col -->
+        </div>
+        <!-- End Row -->
+      </div>
+    </div>
+    <!-- End Features -->
+
+    <!-- Icon Blocks -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-lg-4 mb-5">
+          <div class="text-center px-md-5">
+            <div class="mb-3">
+              <img src="{% static 'icons/audio.png'  %}"  width="45px" height="45px" alt="audio intelligence" />
+            </div>
+            <h5>Audio intelligence</h5>
+            <p><span class="fs-4">{{ fourth_column.first_text}}</span></p>
+          </div>
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg-4 mb-5">
+          <div class="text-center px-md-5">
+            <div class="mb-3">
+              <img src="{% static 'icons/video.png'  %}"  alt="video intelligence"  width="45px" height="45px" />
+            </div>
+            <h5>Video intelligence</h5>
+            <p><span class="fs-4">{{ fourth_column.second_text}}</p>
+          </div>
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg-4 mb-5">
+          <div class="text-center px-md-5">
+            <div class="mb-3">
+              <img src="{% static 'icons/language.png'  %}"  alt="language intelligence"  width="45px" height="45px" />
+            </div>
+            <h5>Language intelligence</h5>
+            <p><span class="fs-4">{{ fourth_column.third_text}}</p>
+          </div>
+        </div>  
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg-4 mb-5 mb-lg-0">
+          <div class="text-center px-md-5">
+            <div class="mb-3">
+              <img src="{% static 'icons/collaboration.png'  %}"  alt="collaboration insights"   width="45px" height="45px" />
+            </div>
+            <h5>Collaboration Insights</h5>
+            <p><span class="fs-4"></span>{{ fourth_column.fourth_text}}</p>
+          </div>
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg-4 mb-5 mb-sm-0">
+          <div class="text-center px-md-5">
+            <div class="mb-3">
+              <img src="{% static 'icons/assistant.png'  %}"   alt="assistant" width="45px" height="45px" />
+            </div>
+            <h5>Assistant</h5>
+            <p><span class="fs-4">{{ fourth_column.fifth_text}}</p>
+          </div>
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="text-center px-md-5">
+            <div class="mb-3">
+              <img src="{% static 'icons/optimization.png'  %}"  alt="workforce optimization"  width="45px" height="45px" />
+            </div>
+            <h5>Workforce Optimization</h5>
+            <p><span class="fs-4">{{ fourth_column.sixth_text}}</p>
+          </div>
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Icon Blocks -->
+
+    <!-- Features -->
+    <div class="overflow-hidden content-space-t-1">
+      <div class="container">
+        <div class="bg-dark rounded-3 p-4 p-sm-8 p-lg-10 mx-md-n7 mx-lg-n10">
+          <div class="row align-items-lg-center">
+            <div class="col-lg-7 order-lg-2 mb-5 mb-lg-0">
+              <div class="position-relative">
+                <div class="w-75 ms-auto">
+                  <img class="img-fluid rounded-3" src="{% static 'assets/index/appui.jpg' %}" width="457" height="358" alt="app interface">
+                </div>
+
+                <div class="position-absolute bottom-0 start-0 mb-10 ms-5">
+                  <img class="img-fluid w-75 shadow rounded-3" src="{% static 'assets/index/appui2.jpg' %}"  width="457" height="358" alt="app interface">
+                </div>
+
+              
+              </div>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-lg-5">
+              <div class="pe-lg-5">
+                <div class="mb-5">
+                  <h2 class="text-white">{{ fifth_column.heading}}</h2>
+                  <p class="text-white-70">{{ fourth_column.subtitle }}
+                  </p>
+                </div>
+
+                <!-- List Checked -->
+                <ul class="list-checked list-checked-soft-bg-primary list-checked-lg mb-5">
+                  <li class="list-checked-item text-white-70">{{ fifth_column.first_text }}</li>
+                  <li class="list-checked-item text-white-70">{{ fifth_column.second_text }}</li>
+                  <li class="list-checked-item text-white-70">{{ fifth_column.third_text }}</li>
+                </ul>
+                <!-- End List Checked -->
+
+                
+              </div>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+      </div>
+    </div>
+    <!-- End Features -->
+
+    <!-- Stats -->
+    <div class="container content-space-2 content-space-lg-3">
+      <div class="row justify-content-lg-between align-items-lg-center">
+        <div class="col-lg-5 mb-9 mb-lg-0">
+          <div class="mb-6">
+            <h2>{{ sixth_column.heading }}</h2>
+            <p>{{ sixth_column.subtitle }}</p>
+          </div>
+
+          <!-- Blockquote -->
+          <figure>
+            <blockquote class="blockquote"><em>{{ sixth_column.comment }}</em></blockquote>
+
+            <figcaption class="blockquote-footer">
+              <div class="d-flex align-items-center">
+                <div class="flex-shrink-0">
+                  <img class="avatar avatar-circle" src="{% static 'assets/img/160x160/img10.jpg' %}" alt="user testimonial">
+                </div>
+
+                <div class="flex-grow-1 ms-3">
+                  {{ sixth_column.fullname }}
+                  <span class="blockquote-footer-source">{{ sixth_column.title }}</span>
+                </div>
+              </div>
+            </figcaption>
+          </figure>
+          <!-- End Blockquote -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col-lg-6">
+          <!-- List -->
+          <ul class="list-equal-height list-equal-height-2-cols">
+            <li class="list-equal-height-item">
+              <h4 class="display-5">{{ sixth_column.first_text }}</h4>
+              <p class="mb-0">{{ sixth_column.first_text_subtitle }}</p>
+            </li>
+
+            <li class="list-equal-height-item">
+              <h4 class="display-5"><sub><i class="bi-arrow-up-short text-primary ms-n2"></i></sub>{{ sixth_column.second_text }}</h4>
+              <p class="mb-0">{{ sixth_column.second_text_subtitle }}</p>
+            </li>
+
+            <li class="list-equal-height-item">
+              <h4 class="display-5"><sub><i class="bi-arrow-up-short text-primary ms-n2"></i></sub>{{ sixth_column.third_text }}</h4>
+              <p class="mb-0">{{ sixth_column.third_text_subtitle }}</p>
+            </li>
+
+            <li class="list-equal-height-item">
+              <h4 class="display-5">{{ sixth_column.fourth_text }}</h4>
+              <p class="mb-0">{{ sixth_column.first_text_subtitle }}</p>
+            </li>
+          </ul>
+          <!-- End List -->
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Stats -->
+
+    <!-- Clients -->
+    <div class="container">
+      <!-- Swiper Slider -->
+     
+      <!-- End Swiper Slider -->
+    </div>
+    <!-- End Clients -->
+
+    <!-- Card Grid -->
+    <div class="container content-space-2 content-space-lg-3">
+      <!-- Heading -->
+      <div class="w-lg-65 text-center mx-lg-auto mb-5 mb-sm-7 mb-lg-10">
+        <h2>Less overhead, More collaboration and Insights.</h2>
+        <p>Stay in the know with insights from industry experts.</p>
+      </div>
+      <!-- End Heading -->
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+
+        {% for post in posts %}
+          <div class="col mb-5 mb-md-0">
+            <!-- Card -->
+            <a class="card card-ghost card-transition-zoom h-100" href="{{ post.get_absolute_url }}">
+              <div class="card-transition-zoom-item">
+                <img class="card-img" src="{{ post.post_image_large.url }}" width="356" height="200"  alt="{{ post.post_image_description }}">
+              </div>
+
+              <div class="card-body">
+                <h4>{{ post.title|truncatewords:9 }}</h4>
+                <p class="card-text">
+                  {% autoescape off  %}
+                      {{post.body|truncatewords:20}}
+                  {% endautoescape %}
+                </p>
+              </div>
+
+              <div class="card-footer">
+                <span class="card-link">Read More</span>
+              </div>
+            </a>
+            <!-- End Card -->
+          </div>
+          <!-- End Col -->
+        {% endfor %}
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Card Grid --><br/>
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== FOOTER ========== -->
+  {% include "footer.html" %}
+  <!-- ========== END FOOTER ========== -->
+
+  <!-- ========== SECONDARY CONTENTS ========== -->
+  <!-- Go To -->
+  <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;" data-hs-go-to-options='{
+       "offsetTop": 700,
+       "position": {
+         "init": {
+           "right": "2rem"
+         },
+         "show": {
+           "bottom": "2rem"
+         },
+         "hide": {
+           "bottom": "-2rem"
+         }
+       }
+     }'>
+    <i class="bi-chevron-up"></i>
+  </a>  
+  <!-- ========== END SECONDARY CONTENTS ========== -->
+
+  <!-- JS Global Compulsory  -->
+  <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="{% static 'assets/vendor/hs-header/dist/hs-header.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-go-to/dist/hs-go-to.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- JS Unify -->
+  <script src="{% static 'assets/js/theme.min.js' %}"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    (function() {
+      // INITIALIZATION OF NAVBAR
+      // =======================================================
+      new HSHeader('#header').init()
+
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      const megaMenu = new HSMegaMenu('.js-mega-menu', {
+        desktop: {
+          position: 'left'
+        }
+      })
+
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      new HSGoTo('.js-go-to')
+
+
+      // INITIALIZATION OF SWIPER
+      // =======================================================
+      var swiper = new Swiper('.js-swiper-clients',{
+        slidesPerView: 2,
+        breakpoints: {
+          380: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 15,
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 15,
+          },
+        },
+      });
+
+    })()
+
+  </script>
+
+  
+
+</body>
+
+
+</html>

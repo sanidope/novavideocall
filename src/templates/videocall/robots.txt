@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /coming-soon/
+Disallow: /live/
+Disallow: /dl/

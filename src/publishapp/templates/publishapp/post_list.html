@@ -1,0 +1,222 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+ 
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="{{ seo_description }}"/>
+  <meta content="vidicu, vidicu.live, ai powered video conferencing, ai powered, video calls, virtual meetings, group video chat, calling, meetings, webinars, video collaboration, live translate, group messaging, virtual meetings, cloud meeting" name="keywords">
+  <meta name="robots" content="follow, index"/>
+  <link rel="canonical" href="{{ og_url }}" />
+
+  
+  {% if page == None %} 
+    <link rel="next" href="https://vidicu.live/blog/posts/?page=1" />
+  {% else %}
+    <link rel="next" href="https://vidicu.live/blog/posts/?page={{page}}" />
+  {% endif %}
+
+  <meta property="og:locale" content="{{ og_locale }}" />
+  <meta property="og:locale:alternate" content="{{ og_locale_alt }}" />
+  <meta property="og:type" content="{{ og_type }}" />
+  <meta property="og:title" content="{{ og_title }}" />
+  <meta property="og:description" content="{{ og_description }}" />
+  <meta property="og:url" content="{{ og_url }}" />
+  <meta property="og:site_name" content="" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ tw_title }}" />
+  <meta name="twitter:description" content="{{ tw_description }}" />
+
+  <!-- Title -->
+
+  <title> {{ seo_title }} </title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-icons/font/bootstrap-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css' %}">
+
+  <!-- CSS Unify Template -->
+  <link rel="stylesheet" href="{% static 'assets/css/theme.min.css' %}">
+</head>
+
+<body>
+  <!-- ========== HEADER ========== -->
+  {% include 'header.html'  %}
+
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+    <!-- Hero -->
+    <div class="overflow-hidden">
+      <div class="container content-space-t-3 content-space-t-lg-4 content-space-b-1 content-space-b-lg-2">
+        <div class="w-lg-50 text-center mx-lg-auto">
+          <!-- Heading -->
+          <div class="mb-5">
+            <h1 class="display-4">Insights</h1>
+            <p>Stay in the know with insights from industry experts.</p>
+          </div>
+          <!-- End Heading -->
+
+          <form action="{% url 'publishapp:post_list'  %}"  method="GET">
+            <div class="position-relative">
+              <!-- Input Card -->
+              <div class="input-card input-card-sm">
+                <div class="input-card-form">
+                  <label for="searchForm" class="form-label visually-hidden">Search article</label>
+                  {% render_field search_form.keyword class="form-control form-control-lg" placeholder="Search article" aria-label="Search article" %}
+                  
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg"><i class="bi-search"></i></button>
+              </div>
+              <!-- End Input Card -->
+
+              <!-- SVG Shape -->
+              <figure class="position-absolute top-0 end-0 d-none d-sm-block zi-n1 mt-n7 me-n10" style="width: 4rem;">
+                <img class="img-fluid" src="{% static 'assets/svg/components/pointer-up.svg' %}" alt="Image Description">
+              </figure>
+              <!-- End SVG Shape -->
+
+              <!-- SVG Shape -->
+              <figure class="position-absolute bottom-0 start-0 zi-n1 mb-n7" style="width: 12rem; margin-left: -10rem;">
+                <img class="img-fluid" src="{% static 'assets/svg/components/curved-shape.svg' %}" alt="Image Description">
+              </figure>
+              <!-- End SVG Shape -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- End Hero -->
+
+    <!-- Tags -->
+    <div class="container content-space-b-2">
+      <div class="text-center">
+  
+          {% for tag in  tags %}  
+            <a class="btn btn-white btn-sm m-1" href="{% url 'publishapp:post_list_by_slug' tag.slug %}"><i class="bi-bookmark me-1"></i> {{tag.name|capfirst }}</a>
+          {% endfor %}
+       
+    
+      </div>
+    </div>
+    <!-- End Tags -->
+
+    <!-- Card Grid -->
+    <div class="container content-space-b-2 content-space-b-lg-3 overflow-hidden">
+      <div class="row row-cols-1 row-cols-sm-2 gx-7">
+
+        {% for post in posts %}
+        
+            <div class="col mb-7 mb-md-10">
+            <!-- Card -->
+            <a class="card card-ghost h-100" href="{{ post.get_absolute_url }}">
+                <div class="row">
+                <div class="col-lg-5 mb-3 mb-lg-0">
+                    <img class="card-img" src="{{ post.post_image_related.url }}" width="209" height="173"  alt="{{ post.post_image_description }}">
+                </div>
+                <!-- End Col -->
+
+                <div class="col-lg-7">
+                    <h4>{{ post.title|truncatewords:9 }}</h4>
+                    <p class="card-text">
+
+                        {% autoescape off  %}
+                            {{post.body|truncatewords:20}}
+                        {% endautoescape %}
+                    </p>
+                    <span class="card-link">Read more</span>
+                </div>
+                <!-- End Col -->
+                </div>
+                <!-- End Row -->
+            </a>
+            <!-- End Card -->
+            </div>
+
+        {% endfor %}
+        <!-- End Col -->
+
+
+      </div>
+      <!-- End Row -->
+
+      <!-- Pagination -->
+      {% include 'publishapp/paginator.html' with pagination=posts current_page=page %}
+      <!-- End Pagination -->
+    </div>
+    <!-- End Card Grid -->
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== FOOTER ========== -->
+    {% include 'footer.html'  %}
+  <!-- ========== END FOOTER ========== -->
+
+  <!-- ========== SECONDARY CONTENTS ========== -->
+  <!-- Go To -->
+  <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;" data-hs-go-to-options='{
+       "offsetTop": 700,
+       "position": {
+         "init": {
+           "right": "2rem"
+         },
+         "show": {
+           "bottom": "2rem"
+         },
+         "hide": {
+           "bottom": "-2rem"
+         }
+       }
+     }'>
+    <i class="bi-chevron-up"></i>
+  </a>
+  <!-- ========== END SECONDARY CONTENTS ========== -->
+
+  <!-- JS Global Compulsory  -->
+  <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="{% static 'assets/vendor/hs-header/dist/hs-header.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-go-to/dist/hs-go-to.min.js' %}"></script>
+
+  <!-- JS Unify -->
+  <script src="{% static 'assets/js/theme.min.js' %}"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    (function() {
+      // INITIALIZATION OF NAVBAR
+      // =======================================================
+      new HSHeader('#header').init()
+
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      const megaMenu = new HSMegaMenu('.js-mega-menu', {
+        desktop: {
+          position: 'left'
+        }
+      })
+
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      new HSGoTo('.js-go-to')
+    })()
+  </script>
+</body>
+
+
+</html>

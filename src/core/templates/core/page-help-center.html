@@ -1,0 +1,321 @@
+{% load static %}
+{% load widget_tweaks %}
+{% load utility %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>Help Center | Vidicu </title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-icons/font/bootstrap-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css' %}">
+
+  <!-- CSS Unify Template -->
+  <link rel="stylesheet" href="{% static 'assets/css/theme.min.css' %}">
+</head>
+
+<body>
+        
+  <!--  Start Header -->
+    {% include 'header.html' %}
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+    <!-- Hero -->
+    <div class="bg-light">
+      <div class="container content-space-t-3 content-space-t-lg-4 content-space-b-1">
+        <div class="w-lg-65">
+          <h1 class="display-5 mb-5">How can we help?</h1>
+
+        </div>
+      </div>
+    </div>
+    <!-- End Hero -->
+
+    <!-- List -->
+    <div class="container content-space-1 content-space-t-lg-3">
+      <div class="row">
+        <div class="col-sm-6 col-lg-4 mb-7 mb-lg-10">
+          <div class="mb-3">
+            <i class="bi-cash-coin fs-1"></i>
+          </div>
+
+          <h4 class="mb-4">Payments</h4>
+
+          <!-- List -->
+          <ul class="list-pointer">
+            {% for payment in payments %}
+              <li class="list-pointer-item">
+                <a class="link link-secondary" href="{{ payment.get_absolute_url }}">{{ payment.title }}</a>
+              </li>
+            {% endfor %}
+ 
+          </ul>
+          <!-- End List -->
+
+          
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg-4 mb-7 mb-lg-10">
+          <div class="mb-3">
+            <i class="bi-person-circle fs-1"></i>
+          </div>
+
+          <h4 class="mb-4">My Accounts</h4>
+
+          <!-- List -->
+          <ul class="list-pointer">
+            {% for myaccount in myaccounts %}
+              <li class="list-pointer-item">
+                <a class="link link-secondary" href="{{ myaccount.get_absolute_url }}">{{ myaccount.title }}</a>
+              </li>
+            {% endfor %}
+        
+          </ul>
+          <!-- End List -->
+
+          
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg-4 mb-7 mb-lg-10">
+          <div class="mb-3">
+            <i class="bi-wallet2 fs-1"></i>
+          </div>
+
+          <h4 class="mb-4">Purchasing</h4>
+
+          <!-- List -->
+          <ul class="list-pointer">
+            {%  for purchase in  purchasing %}
+            <li class="list-pointer-item">
+              <a class="link link-secondary" href="{{ purchase.get_absolute_url }}">{{ purchase.title }}</a>
+            </li>
+            {% endfor %}
+      
+          </ul>
+          <!-- End List -->
+
+        
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg-4 mb-7 mb-lg-0">
+          <div class="mb-3">
+            <i class="bi-person-badge fs-1"></i>
+          </div>
+
+          <h4 class="mb-4">Profile &amp; Plan</h4>
+
+          <!-- List -->
+          <ul class="list-pointer">
+            {% for profile in profileplan %}
+              <li class="list-pointer-item">
+                <a class="link link-secondary" href="{{ profile.get_absolute_url }}">{{ profile.title}}</a>
+              </li>
+            {% endfor %}
+ 
+          </ul>
+          <!-- End List -->
+
+          
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg-4 mb-7 mb-sm-0">
+          <div class="mb-3">
+            <i class="bi-life-preserver fs-1"></i>
+          </div>
+
+          <h4 class="mb-4">Support</h4>
+
+          <!-- List -->
+          <ul class="list-pointer">
+            {% for s in support %}
+            <li class="list-pointer-item">
+              <a class="link link-secondary" href="{{ s.get_absolute_url }}">{{ s.title}}</a>
+            </li>
+
+            {% endfor %}
+            
+          </ul>
+          <!-- End List -->
+
+         
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="mb-3">
+            <i class="bi-folder2-open fs-1"></i>
+          </div>
+
+          <h4 class="mb-4">More</h4>
+
+          <!-- List -->
+          <ul class="list-pointer">
+            {% for m in more %}
+              <li class="list-pointer-item">
+                <a class="link link-secondary" href="{{ m.get_absolute_url }}">{{ m.title }}</a>
+              </li>
+            {% endfor %}
+      
+          </ul>
+          <!-- End List -->
+
+          
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End List -->
+
+    <!-- Card Grid -->
+    <div class="container border-top content-space-1 content-space-b-lg-3">
+      <div class="row">
+        <div class="col-sm-6 col-lg-4 mb-3 mb-lg-0">
+          <!-- Card -->
+          <a class="card card-transition h-100" href="{% get_discord_link %}">
+            <div class="card-body">
+              <!-- Icon Block -->
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="bi-discord fs-3 text-dark"></i>
+                </div>
+                <div class="flex-grow-1 ms-4">
+                  <h5 class="card-title">Ask our community</h5>
+                  <p class="card-text">Get help from 5k+ Vidicu users</p>
+                </div>
+              </div>
+              <!-- End Icon Block -->
+            </div>
+          </a>
+          <!-- End Card -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg-4 mb-3 mb-lg-0">
+          <!-- Card -->
+          <a class="card card-transition h-100" href="{% get_twitter_link %}">
+            <div class="card-body">
+              <!-- Icon Block -->
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="bi-twitter fs-3 text-dark"></i>
+                </div>
+                <div class="flex-grow-1 ms-4">
+                  <h5 class="card-title">Reach us on twitter</h5>
+                  <p class="card-text">Get help for support staff </p>
+                </div>
+              </div>
+              <!-- End Icon Block -->
+            </div>
+          </a>
+          <!-- End Card -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col-sm-6 col-lg-4">
+          <!-- Card -->
+          <a class="card card-transition h-100" href="mailto:info@vidicu.live">
+            <div class="card-body">
+              <!-- Icon Block -->
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="bi-envelope-open fs-3 text-dark"></i>
+                </div>
+                <div class="flex-grow-1 ms-4">
+                  <h5 class="card-title">Email us</h5>
+                  <p class="card-text">Reach us at <span class="text-primary">info@vidicu.live</span></p>
+                </div>
+              </div>
+              <!-- End Icon Block -->
+            </div>
+          </a>
+          <!-- End Card -->
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Card Grid -->
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== FOOTER ========== -->
+    {% include 'footer.html' %}
+  <!-- ========== END FOOTER ========== -->
+
+  <!-- ========== SECONDARY CONTENTS ========== -->
+  <!-- Go To -->
+  <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;" data-hs-go-to-options='{
+       "offsetTop": 700,
+       "position": {
+         "init": {
+           "right": "2rem"
+         },
+         "show": {
+           "bottom": "2rem"
+         },
+         "hide": {
+           "bottom": "-2rem"
+         }
+       }
+     }'>
+    <i class="bi-chevron-up"></i>
+  </a>
+  <!-- ========== END SECONDARY CONTENTS ========== -->
+
+  <!-- JS Global Compulsory  -->
+  <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="{% static 'assets/vendor/hs-header/dist/hs-header.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-go-to/dist/hs-go-to.min.js' %}"></script>
+
+  <!-- JS Unify -->
+  <script src="{% static 'assets/js/theme.min.js' %}"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    (function() {
+      // INITIALIZATION OF NAVBAR
+      // =======================================================
+      new HSHeader('#header').init()
+
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      const megaMenu = new HSMegaMenu('.js-mega-menu', {
+        desktop: {
+          position: 'left'
+        }
+      })
+
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      new HSGoTo('.js-go-to')
+    })()
+  </script>
+</body>
+
+
+</html>

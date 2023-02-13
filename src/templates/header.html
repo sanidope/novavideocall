@@ -1,0 +1,81 @@
+{% load static %}
+
+
+<header id="header" class="navbar navbar-expand-lg navbar-end navbar-light navbar-absolute-top navbar-show-hide" data-hs-header-options='{
+    "fixMoment": 0,
+    "fixEffect": "slide"
+  }'>
+<div class="container">
+<nav class="js-mega-menu navbar-nav-wrap">
+<!-- Default Logo -->
+<a class="navbar-brand" href="{% url 'core:home' %}" aria-label="Vidicu">
+  <img class="navbar-brand-logo" src="{% static 'icons/logo.png' %}" alt="Vidicu Logo">
+</a>
+<!-- End Default Logo -->
+
+<!-- Toggler -->
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-default">
+    <i class="bi-list"></i> 
+  </span>
+  <span class="navbar-toggler-toggled">
+    <i class="bi-x"></i>
+  </span>
+</button>
+<!-- End Toggler -->
+
+<!-- Collapse -->
+<div class="collapse navbar-collapse" id="navbarNavDropdown">
+  <div class="navbar-absolute-top-scroller">
+    <ul class="navbar-nav nav-pills">
+      
+      <!-- Pages -->
+      <li class="hs-has-mega-menu nav-item">
+        <a id="pagesMegaMenu" class="hs-mega-menu-invoker nav-link" href="{% url 'core:about_us' %}" role="button" aria-expanded="false">About</a>
+
+    
+      </li>
+      <!-- End Pages -->
+
+      <!-- Blog -->
+      <li class="hs-has-mega-menu nav-item" data-hs-mega-menu-item-options='{
+            "desktop": {
+              "maxWidth": "50rem"
+            }
+          }'>
+        <a id="blogMegaMenu" class="hs-mega-menu-invoker nav-link" href="{% url 'publishapp:post_list'  %}" role="button" aria-expanded="false">Blog</a>
+
+       
+      </li>
+      <!-- End Blog -->
+
+      <!-- Docs -->
+      <li class="hs-has-mega-menu nav-item" data-hs-mega-menu-item-options='{
+            "desktop": {
+              "maxWidth": "20rem"
+            }
+          }'>
+        <a id="docsMegaMenu" class="hs-mega-menu-invoker nav-link" href="{% url 'core:contact_us' %}" role="button" aria-expanded="false">Contact Us</a>
+
+      </li>
+      <!-- End Docs -->
+
+      <!-- Log in -->
+      <li class="nav-item ms-lg-auto">
+        <a class="btn btn-white me-2 me-lg-0" href="{% url 'core:pricing' %}">Pricing</a>
+        <a class="btn btn-primary d-lg-none" href="{% url 'core:download_app'  %}">Download App</a>
+      </li>
+      <!-- End Log in -->
+
+      <!-- Sign up -->
+      <li class="nav-item">
+        <a class="btn btn-primary d-none d-lg-inline-block" href="{% url 'core:download_app'  %}">Download App</a>
+      </li>
+      <!-- End Sign up -->
+    </ul>
+  </div>
+</div>
+<!-- End Collapse -->
+</nav>
+</div>
+</header>

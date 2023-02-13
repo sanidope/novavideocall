@@ -1,0 +1,264 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Vidicu" />
+  <meta name=”robots” content="index, follow">
+  <link rel="canonical" href="{{ og_url }}">
+  <meta name="description" content="{{  seo_description  }}"/> 
+
+  <!-- Title -->
+  <title>Blog: Article | Vidicu </title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+  <meta property="og:type" content="{{ og_type }}" />
+  <meta property="og:title" content="{{ og_title }}" />
+  <meta property="og:description" content="{{ seo_description }}" />
+  <meta property="og:image" content="{{ og_image }}" />
+  <meta property="og:url" content="{{ og_url }}" />
+  <meta property="og:site_name" content="{{ og_site_name }}" />
+  <meta property="og:locale" content="{{ og_locale }}" />
+  <meta property="og:locale:alternate" content="{{ og_locale_alt }}" />
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-icons/font/bootstrap-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css' %}">
+
+  <!-- CSS Unify Template -->
+  <link rel="stylesheet" href="{% static 'assets/css/theme.min.css' %}">
+</head>
+
+<body>
+  <!-- ========== HEADER ========== -->
+  {% include 'header.html' %}
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+    <!-- Hero -->
+    <div class="bg-gradient-to-bottom-sm-light">
+      <div class="container content-space-t-3">
+        <div class="row justify-content-lg-center">
+        
+          <!-- End Col -->
+        </div>
+        <!-- End Row -->
+
+        <div class="row justify-content-lg-center">
+          <div class="col-lg-10">
+            <img class="img-fluid" src="{{ post.post_image_large.url }}" width="{{ post.post_image_large.width }}" height="{{ post.post_image_large.height }}" alt="{{ post.post_image_description }}">
+          </div>
+          <!-- End Col -->
+        </div>
+        <!-- End Row -->
+      </div>
+    </div>
+    <!-- End Hero -->
+
+    <!-- Description -->
+    <div class="container content-space-2 content-space-lg-3">
+        
+
+        <div class="row mb-3">
+            
+            <div class="col-10 col-md-8 col-lg-6 offset-1 offset-md-2 offset-lg-3">
+                <h1 class="h2" style="color:#0ABF53;">{{ post.title|upper }}</h1>
+            
+            </div>
+        </div>
+
+      <div class="row mb-3">
+        <div class="col-10 col-md-8 col-lg-6 offset-1 offset-md-2 offset-lg-3">
+            {% autoescape off %}
+            {{ post.body }}   
+            
+            {% endautoescape %}
+        
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+
+      
+
+    </div>
+    <!-- End Description -->
+
+    <!-- Card Grid -->
+    <div class="container content-space-b-2 content-space-b-lg-3">
+      <!-- Heading -->
+      <div class="w-lg-65 text-center mx-lg-auto mb-7">
+        {% if not similar_posts.count < 1 %}
+          <h3>Related articles</h3>
+        {% endif %}
+      </div>
+      <!-- End Heading -->
+
+      <div class="row">
+        {% for post in similar_posts %}
+          <div class="col-sm-6 col-md-4 mb-5 mb-md-0">
+            <!-- Card -->
+            <a class="card card-ghost card-transition-zoom h-100" href="{{ post.get_absolute_url }}">
+              <div class="card-transition-zoom-item">
+                <img class="card-img" src="{{ post.post_image_related.url }}" width="{{ post.post_image_related.width }}" height="{{ post.post_image_related.height }}" alt="{{ post.post_image_description }}">
+              </div>
+
+              <div class="card-body">
+                <h4>{{ post.title|truncatewords:9  }}</h4>
+                <p class="card-text">
+                  {% autoescape off %}
+                    {{post.body|truncatewords:20 }}
+                  {% endautoescape %}
+                </p>
+              </div>
+
+              <div class="card-footer">
+                <span class="card-link">Read More...</span>
+              </div>
+            </a>
+            <!-- End Card -->
+          </div>
+          <!-- End Col -->
+        {% endfor %}
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Card Grid -->
+
+    <!-- About Author -->
+    <div class="bg-light">
+      <div class="container content-space-1">
+        <div class="row justify-content-lg-center">
+          <div class="col-lg-8">
+            <div class="mb-5">
+              <h5>About the author</h5>
+            </div>
+
+            <!-- Media -->
+            <div class="d-sm-flex">
+              <div class="flex-shrink-0 mb-3 mb-sm-0">
+                <img class="avatar avatar-xl avatar-circle" src="{{ about_author.author_pic.url }}" width="{{ about_author.author_pic.width }}" height="{{ about_author.author_pic.height }}" alt="{{ about_author.author_pic_description }}">
+              </div>
+
+              <div class="flex-grow-1 ms-sm-4">
+                <!-- Media -->
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h4 class="mb-0">
+                    <a class="text-dark" href="#">{{ about_author.full_name|capfirst }}</a>
+                  </h4>
+                  
+                </div>
+                <!-- End Media -->
+
+                <p>{% autoescape off %} {{ about_author.description }} {% endautoescape %}</p>
+              </div>
+            </div>
+            <!-- End Media -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End About Author -->
+
+
+    <!-- Subscribe -->
+    <div class="container content-space-2 content-space-lg-3">
+      <!-- Heading -->
+      <div class="w-lg-65 text-center mx-lg-auto mb-7">
+        <h3>Stay in the know</h3>
+        <p>Get special offers on the latest developments from Vidicu.</p>
+      </div>
+      <!-- End Heading -->
+
+      <div class="text-center mx-auto" style="max-width: 32rem;">
+        <form>
+          <!-- Input Card -->
+          <div class="input-card border mb-5">
+            <div class="input-card-form"> 
+              <label for="subscribeForm" class="form-label visually-hidden">Enter email</label>
+              <input type="email" class="form-control form-control-lg" id="subscribeForm" placeholder="Enter email" aria-label="Enter email">
+            </div>
+            <button type="button" class="btn btn-primary btn-lg" id="heroNameAddOn">Subscribe</button>
+          </div>
+          <!-- End Input Card -->
+        </form>
+
+        
+      </div>
+    </div>
+    <!-- End Subscribe -->
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== FOOTER ========== -->
+  {% include 'footer.html' %}
+  <!-- ========== END FOOTER ========== -->
+
+  <!-- ========== SECONDARY CONTENTS ========== -->
+  <!-- Go To -->
+  <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;" data-hs-go-to-options='{
+       "offsetTop": 700,
+       "position": {
+         "init": {
+           "right": "2rem"
+         },
+         "show": {
+           "bottom": "2rem"
+         },
+         "hide": {
+           "bottom": "-2rem"
+         }
+       }
+     }'>
+    <i class="bi-chevron-up"></i>
+  </a>
+  <!-- ========== END SECONDARY CONTENTS ========== -->
+
+  <!-- JS Global Compulsory  -->
+  <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="{% static 'assets/vendor/hs-header/dist/hs-header.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-go-to/dist/hs-go-to.min.js' %}"></script>
+
+  <!-- JS Unify -->
+  <script src="{% static 'assets/js/theme.min.js' %}"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    (function() {
+      // INITIALIZATION OF NAVBAR
+      // =======================================================
+      new HSHeader('#header').init()
+
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      const megaMenu = new HSMegaMenu('.js-mega-menu', {
+        desktop: {
+          position: 'left'
+        }
+      })
+
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      new HSGoTo('.js-go-to')
+    })()
+  </script>
+</body>
+
+
+</html>
