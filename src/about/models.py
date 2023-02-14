@@ -7,7 +7,6 @@ from imagekit.models import ProcessedImageField
 
 class FirstSection(models.Model):
     user = models.OneToOneField(User, on_delete=models.DO_NOTHING)
-    about_text = models.TextField()
     about_pic = models.ImageField(upload_to="about_pic/%y/%m/%d")
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)
