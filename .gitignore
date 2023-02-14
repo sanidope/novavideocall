@@ -4,3 +4,5 @@ implant_compiler/
 /logs
 /logs/guicorn.errors
 /logs/debug.logs
+/media_cdn
+/static_cdn
