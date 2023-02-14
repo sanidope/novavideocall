@@ -4,7 +4,7 @@ from . models import *
 
 @admin.register(FirstSection)
 class FirstSectionAdmin(admin.ModelAdmin):
-    list_display = ['id', 'user', 'about_text', 'about_pic', 'created', 'updated']
+    list_display = ['id', 'user', 'about_pic', 'created', 'updated']
     list_display_links = ('id', 'user',)
 
 
