@@ -51,12 +51,11 @@ def index(request):
         'og_url': 'https://vidicu.live/',
         'og_type' : 'website',
         "og_image" : 'https://vidicu.live/static/vidicu.png',
-        "og_site_name" : 'Vidicu',
-        'tw_card' : 'summary_large_image',
+        "og_site_name" : 'vidicu',
+        'tw_card' : 'summary',
         'tw_site' : '@vidiculive',
         'tw_title' : 'Vidicu | AI Powered Video Conferencing, Video Calls, Online Meetings',
         'tw_description' : 'Vidicu is a cloud-based video conferencing platform that offers a range of AI-powered features to make virtual meetings more efficient and engaging. With Vidicu, you can host high-quality video and audio meetings, share screens, and collaborate with team members in real-time',
-        'tw_creator' : '',
         'tw_image' : 'https://vidicu.live/static/vidicu.png',
         'posts' : object_list,
         'second_column' : second_column,
@@ -74,7 +73,7 @@ def about_us(request):
     fourth_section = FourthSection.objects.all()[0]
     fifth_section = FifthSection.objects.all()[0]
     return render(request, 'core/about_us.html', {  
-        'seo_title' : '',
+        'seo_title' : 'About Us | Vidicu',
         'seo_description' : '',
         'og_description' : '',
         "og_title" : '', 
@@ -119,20 +118,19 @@ def contact_us(request):
 
 
     return render(request, 'core/contact_us.html', {
-        'seo_title' : '',
-        'seo_description' : '',
-        'og_description' : '',
-        "og_title" : '', 
+        'seo_title' : 'Contact Us | Vidicu Support',
+        'seo_description' : 'Find answers to your questions and how to contact our support team on vidicu or send us your feedback by contacting us through our various channels.',
+        'og_description' : 'Find answers to your questions and how to contact our support team on vidicu or send us your feedback by contacting us through our various channels.',
+        'og_title' : 'Contact Us | Vidicu Support', 
         'og_url': 'https://vidicu.live/contact-us/',
         'og_type' : 'website',
-        "og_image" : '',
-        "og_site_name" : '',
-        'tw_card' : '',
-        'tw_site' : '',
-        'tw_title' : '',
-        'tw_description' : '',
-        'tw_creator' : '',
-        'tw_image' : '',
+        'og_image' : 'https://vidicu.live/static/vidicu.png',
+        'og_site_name' : 'vidicu',
+        'tw_card' : 'summary',
+        'tw_site' : '@vidiculive',
+        'tw_title' : 'Contact Us | Vidicu Support',
+        'tw_description' : 'Find answers to your questions and how to contact our support team on vidicu or send us your feedback by contacting us through our various channels.',
+        'tw_image' : 'https://vidicu.live/static/vidicu.png',
         'previsitinquires' : previsitinquires,
         'salesquestions' :  salesquestions,
         'office_address' : office_address,
@@ -158,6 +156,7 @@ def subscribe(request):
 
 
 
+
 def pricing(request):
     pricing_compare_plan = PricingComparePlan.objects.all()
     pricingfaq = PricingFAQ.objects.all()[0]
@@ -167,20 +166,16 @@ def pricing(request):
     highlightsection = HighLightSection.objects.all()[0]
 
     return render(request, 'core/page-pricing.html', {
-        'seo_title' : '',
-        'seo_description' : '',
-        'og_description' : '',
-        "og_title" : '', 
+        'seo_title' : 'Pricing & Plans | Vidicu',
+        'seo_description' : "Check vidicu's flexible plans and pricing, Vidicu offers pricing plans tailored to your unique needs, Try vidicu for free or explore our Professional and Teams Ready plans to see which one is right for you.",
+        'og_description' :  "Check vidicu's flexible plans and pricing, Vidicu offers pricing plans tailored to your unique needs, Try vidicu for free or explore our Professional and Teams Ready plans to see which one is right for you.",
+        "og_title" : 'Pricing & Plans | Vidicu', 
         'og_url': 'https://vidicu.live/pricing/',
         'og_type' : 'website',
-        "og_image" : '',
-        "og_site_name" : '',
-        'tw_card' : '',
-        'tw_site' : '',
-        'tw_title' : '',
-        'tw_description' : '',
-        'tw_creator' : '',
-        'tw_image' : '',
+        "og_image" : 'https://vidicu.live/static/vidicu.png',
+        "og_site_name" : 'vidicu',
+        'tw_title' : 'Pricing & Plans | Vidicu',
+        'tw_description' : "Check vidicu's flexible plans and pricing, Vidicu offers pricing plans tailored to your unique needs, Try vidicu for free or explore our Professional and Teams Ready plans to see which one is right for you.",
         'pricing_compare_plan' : pricing_compare_plan,
         'pricingfaq' : pricingfaq, 
         'pricingheading' : pricingheading,
@@ -236,20 +231,19 @@ def download_app(request):
     download_article = DownloadPageArticle.objects.all()[0]
 
     return render(request, 'core/download_app.html', {
-        'seo_title' : '',
-        'seo_description' : '',
-        'og_description' : '',
-        "og_title" : '', 
-        'og_url': 'https://vidicu.live/download/',
+        'seo_title' : 'Download the Vidicu Desktop App | Vidicu',
+        'seo_description' : 'Download Vidicu for Windows and Linux, And Find out why users trust Vidicu as their collaboration solution.',
+        'og_description' : 'Download Vidicu for Windows and Linux, And Find out why users trust Vidicu as their collaboration solution.',
+        "og_title" : 'Download the Vidicu Desktop App | Vidicu', 
+        'og_url': "https://vidicu.live/download",
         'og_type' : 'website',
-        "og_image" : '',
-        "og_site_name" : '',
-        'tw_card' : '',
-        'tw_site' : '',
-        'tw_title' : '',
-        'tw_description' : '',
-        'tw_creator' : '',
-        'tw_image' : '',
+        "og_image" : 'https://vidicu.live/static/vidicu.png',
+        "og_site_name" : 'vidicu',
+        'tw_card' : 'summary',
+        'tw_site' : '@vidiculive',
+        'tw_title' : 'Download the Vidicu Desktop App | Vidicu',
+        'tw_description' : 'Download Vidicu for Windows and Linux, And Find out why users trust Vidicu as their collaboration solution.',
+        'tw_image' : 'https://vidicu.live/static/vidicu.png',
         'download_article' : download_article
     })
 
