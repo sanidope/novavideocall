@@ -1,5 +1,7 @@
 User-agent: *
 Disallow: /admin/
 Disallow: /coming-soon/
+Disallow: /terms-of-use/
+Disallow: /privacy-policy/
 Disallow: /live/
 Disallow: /dl/
