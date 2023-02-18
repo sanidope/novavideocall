@@ -99,9 +99,12 @@
       <div class="row justify-content-lg-between">
         <div class="col-md-6 mb-5 mb-md-0">
           <h2> {{ second_section.title1}} </h2>
-           {% autoescape off %} 
-              {{ second_section.content1 }}
-           {% endautoescape %}
+          
+            <div align="justify">
+            {% autoescape off %} 
+                {{ second_section.content1 }}
+            {% endautoescape %}
+            </div>
         </div>
         <!-- End Col -->
 
@@ -115,11 +118,11 @@
 
               <div class="flex-grow-1 ms-4">
                 <h5>{{ second_section.title2}}</h5>
-                <p>
+                <div align="justify">
                   {% autoescape off %} 
                     {{ second_section.content2 }}
                   {% endautoescape %}
-                </p>
+                </div>
               </div>
             </div>
             <!-- End Media -->
@@ -132,11 +135,11 @@
 
               <div class="flex-grow-1 ms-4">
                 <h5>{{ second_section.title3 }}</h5>
-                <p>
+                <div align="justify">
                   {% autoescape off %} 
                     {{ second_section.content3 }}
                   {% endautoescape %}
-                </p>
+                </div>
               </div>
             </div>
             <!-- End Media -->
@@ -149,11 +152,11 @@
 
               <div class="flex-grow-1 ms-4">
                 <h5>{{ second_section.title4 }}</h5>
-                <p>
+                <div align="justify">
                   {% autoescape off %} 
                     {{ second_section.content4 }}
                   {% endautoescape %}
-                </p>
+                </div>
               </div>
             </div>
             <!-- End Media -->
