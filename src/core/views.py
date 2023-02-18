@@ -66,6 +66,7 @@ def index(request):
     })
 
 
+
 def about_us(request):
     aboutus_icons = AboutUsIcons.objects.all()[0]
     first_section = FirstSection.objects.all()[0]
@@ -74,19 +75,18 @@ def about_us(request):
     fifth_section = FifthSection.objects.all()[0]
     return render(request, 'core/about_us.html', {  
         'seo_title' : 'About Us | Vidicu',
-        'seo_description' : '',
-        'og_description' : '',
-        "og_title" : '', 
+        'seo_description' : "Vidicu is an AI-powered video conferencing platform based in Poland. Our platform is designed to provide seamless video calls and online meetings for individuals and businesses alike. Our mission is to bring people closer together, no matter where they are in the world, and enable them to connect and collaborate with ease. we use AI technology to ensure that your video calls are crystal clear and easy to use. Vidicu includes real-time language translation to help bridge the language barrier and make it easy for people to communicate, no matter what language they speak.",
+        'og_description' : "Vidicu is an AI-powered video conferencing platform based in Poland. Our platform is designed to provide seamless video calls and online meetings for individuals and businesses alike. Our mission is to bring people closer together, no matter where they are in the world, and enable them to connect and collaborate with ease. we use AI technology to ensure that your video calls are crystal clear and easy to use. Vidicu includes real-time language translation to help bridge the language barrier and make it easy for people to communicate, no matter what language they speak.",
+        "og_title" : 'About Us | Vidicu', 
         'og_url': 'https://vidicu.live/about-us/',
         'og_type' : 'website',
-        "og_image" : '',
-        "og_site_name" : '',
-        'tw_card' : '',
-        'tw_site' : '',
-        'tw_title' : '',
-        'tw_description' : '',
-        'tw_creator' : '',
-        'tw_image' : '',
+        "og_image" : 'https://vidicu.live/static/vidicu.png',
+        "og_site_name" : 'vidicu',
+        'tw_card' : 'summary',
+        'tw_site' : '@vidiculive',
+        'tw_title' : 'About Us | Vidicu',
+        'tw_description' : "Vidicu is an AI-powered video conferencing platform based in Poland. Our platform is designed to provide seamless video calls and online meetings for individuals and businesses alike. Our mission is to bring people closer together, no matter where they are in the world, and enable them to connect and collaborate with ease. we use AI technology to ensure that your video calls are crystal clear and easy to use. Vidicu includes real-time language translation to help bridge the language barrier and make it easy for people to communicate, no matter what language they speak.",
+        'tw_image' : 'https://vidicu.live/static/vidicu.png',
         'aboutus_icons' :  aboutus_icons,
         'first_section' : first_section, 
         'second_section' : second_section,
