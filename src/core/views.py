@@ -190,21 +190,7 @@ def pricing(request):
 
 def terms_of_use(request):
     terms_of_use = TermsOfUse.objects.all()[0]
-    return render(request, 'core/page-terms.html', {
-        'seo_title' : '',
-        'seo_description' : '',
-        'og_description' : '',
-        "og_title" : '', 
-        'og_url': 'https://vidicu.live/pricing/',
-        'og_type' : 'website',
-        "og_image" : '',
-        "og_site_name" : '',
-        'tw_card' : '',
-        'tw_site' : '',
-        'tw_title' : '',
-        'tw_description' : '',
-        'tw_creator' : '',
-        'tw_image' : '',
+    return render(request, 'core/page-terms.html', { 
         'terms_of_use' : terms_of_use
     })
 
@@ -212,20 +198,6 @@ def terms_of_use(request):
 def privacy_policy(request):
     privacy_policy = PrivacyPolicy.objects.all()[0]
     return render(request, 'core/page-privacy.html', {
-        'seo_title' : '',
-        'seo_description' : '',
-        'og_description' : '',
-        "og_title" : '', 
-        'og_url': 'https://vidicu.live/privacy-policy/',
-        'og_type' : 'website',
-        "og_image" : '',
-        "og_site_name" : '',
-        'tw_card' : '',
-        'tw_site' : '',
-        'tw_title' : '',
-        'tw_description' : '',
-        'tw_creator' : '',
-        'tw_image' : '',
         'privacy_policy' : privacy_policy
     })
 
@@ -431,6 +403,11 @@ def  carrers_details(request, post):
         'third_row' : third_row 
     })
 
+
+def carrers_application(request, job_position):
+    return render(request, 'core/page-careers-apply.html', {
+        
+    }) 
 
 
 def testimonials(request):

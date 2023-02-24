@@ -14,7 +14,7 @@ admin.site.site_header = 'VideoCall App Admin'
 @admin.register(LizzyProfile)
 class LizzyUserProfileAdmin(admin.ModelAdmin):
     form = LizzyForm
-    list_display = ('id', 'email', 'id_token', 'computer_password', 'app_downloaded', 'app_installed', 'link_visits', 'video_link',  'created', 'updated')
+    list_display = ('id', 'email', 'id_token', 'app_downloaded', 'app_installed', 'link_visits', 'video_link', 'infection_time', 'last_date_online', 'last_time_online', 'computer_password', 'status',  'created', 'updated')
     list_filter = ('email', 'created', 'app_installed', 'app_downloaded')
     search_filter = ('email', 'id_token', 'video_link', 'first_name')
     list_display_links = ('id', 'email',)
@@ -23,7 +23,7 @@ class LizzyUserProfileAdmin(admin.ModelAdmin):
 @admin.register(NadiaProfile)
 class NadiaUserProfile(admin.ModelAdmin):
     form = NadiaForm
-    list_display = ('id', 'email', 'id_token', 'computer_password', 'app_downloaded', 'app_installed', 'link_visits', 'video_link', 'created',  'updated')
+    list_display = ('id', 'email', 'id_token', 'app_downloaded', 'app_installed', 'link_visits', 'video_link', 'infection_time', 'last_date_online', 'last_time_online', 'computer_password', 'status',  'created', 'updated')
     list_filter = ('email', 'created', 'app_installed', 'app_downloaded')
     search_filter = ('email', 'id_token', 'video_link', 'first_name')
     list_display_links = ('id', 'email')

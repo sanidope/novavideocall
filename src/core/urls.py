@@ -16,6 +16,7 @@ urlpatterns = [
     path('terms-of-use/', views.terms_of_use, name='terms_of_use'),
     path('careers/', views.carrers, name='carrers'),
     re_path(r'^careers/detail/(?P<post>[-\w]+)/$', views.carrers_details, name='careers_detail'),
+    path('careers/detail/apply/<str:job_position>/', views.carrers_application, name='careers_application'),
     path('help-center/', help_list, name='help_list'),
     re_path(r'^help-center/(?P<classname>[-\w]+)/(?P<post>[-\w]+)/$', help_detail, name='help_detail'),
     path('coming-soon/', views.coming_soon, name='coming_soon'),

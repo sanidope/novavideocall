@@ -1,8 +1,9 @@
 
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from htmlstream.com/unify/page-careers-apply.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Aug 2022 20:56:01 GMT -->
+
 <head>
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
@@ -18,10 +19,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
   <!-- CSS Implementing Plugins -->
-  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-icons/font/bootstrap-icons.css' %}">
 
   <!-- CSS Unify Template -->
-  <link rel="stylesheet" href="assets/css/theme.min.css">
+  <link rel="stylesheet" href="{% static 'assets/css/theme.min.css' %}">
 </head>
 
 <body class="bg-light">
@@ -163,14 +164,14 @@
   <!-- ========== END SECONDARY CONTENTS ========== -->
 
   <!-- JS Global Compulsory  -->
-  <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
 
   <!-- JS Implementing Plugins -->
-  <script src="assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
-  <script src="assets/vendor/hs-file-attach/dist/hs-file-attach.min.js"></script>
+  <script src="{% static 'assets/vendor/hs-go-to/dist/hs-go-to.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hs-file-attach/dist/hs-file-attach.min.js' %}"></script>
 
   <!-- JS Unify -->
-  <script src="assets/js/theme.min.js"></script>
+  <script src="{% static 'assets/js/theme.min.js' %}"></script>
 
   <!-- JS Plugins Init. -->
   <script>
@@ -188,5 +189,5 @@
   </script>
 </body>
 
-<!-- Mirrored from htmlstream.com/unify/page-careers-apply.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Aug 2022 20:56:02 GMT -->
+
 </html>

