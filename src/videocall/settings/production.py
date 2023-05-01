@@ -1,7 +1,7 @@
 import json
 from django.conf import settings
 
-with open('/etc/novavideocallapp/config.json') as config_file:
+with open('/etc/novavideocall/config.json') as config_file:
     config = json.load(config_file)
 
 if not settings.DEBUG:
