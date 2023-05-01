@@ -1,7 +1,7 @@
 import json
 from django.conf import settings
 
-with open('/etc/vidicu/config.json') as config_file:
+with open('/etc/novavideocallapp/config.json') as config_file:
     config = json.load(config_file)
 
 if not settings.DEBUG:
@@ -10,7 +10,7 @@ if not settings.DEBUG:
 
     # Build paths inside the project like this: BASE_DIR / 'subdir'.
     BASE_DIR = Path(__file__).resolve().parent.parent.parent
-    BASE_URL = 'https://vidicu.live'
+    BASE_URL = 'http://novavideocall.live'
 
 
     # SECURITY WARNING: don't run with debug turned on in production!
