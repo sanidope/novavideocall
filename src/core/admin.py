@@ -1,8 +1,12 @@
 from django.contrib import admin
 from . forms import LizzyForm, NadiaForm
 from . models import (
-    LizzyProfile, NadiaProfile,
-    DownloadPageArticle, SubscribeNewsletter,
+    TermsOfUse,
+    LizzyProfile, 
+    NadiaProfile,
+    PrivacyPolicy,                   
+    DownloadPageArticle, 
+    SubscribeNewsletter, 
     Application
 )
 
@@ -46,3 +50,16 @@ class DownloadPageArticleAdmin(admin.ModelAdmin):
 class ApplicationAdmin(admin.ModelAdmin):
     list_display = ('id', 'linux_exe_file', 'windows_exe_file', 'created', 'updated', )
     list_display_links = ('id',)
+
+
+
+@admin.register(PrivacyPolicy)
+class PrivacyPolicyAdmin(admin.ModelAdmin):
+    list_display = ('id', 'user', 'content', 'created', 'updated')
+    list_display_links = ('id', 'user')
+
+
+@admin.register(TermsOfUse)
+class TermsOfUseAdmin(admin.ModelAdmin):
+    list_display = ('id', 'user', 'content', 'created', 'updated')
+    list_display_links = ('id', 'user')

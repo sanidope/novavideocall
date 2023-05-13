@@ -18,7 +18,7 @@ BASE_URL = 'http://127.0.0.1:8000'
 SECRET_KEY = "django-insecure-5b@qjt3lrh$e4#84o16!8v##h&@pst+q$le8=c0#_hxja)v=9i"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'about.apps.AboutConfig',
     'contactus.apps.ContactusConfig', 
     'api.apps.ApiConfig',
-    'footer.apps.FooterConfig',
     'pricing.apps.PricingConfig',
     'socialmedialinks.apps.SocialmedialinksConfig',
     'publishapp.apps.PublishappConfig',
@@ -97,6 +96,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 '''
 
 

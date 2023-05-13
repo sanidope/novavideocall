@@ -47,7 +47,6 @@ if not settings.DEBUG:
         'about.apps.AboutConfig',
         'contactus.apps.ContactusConfig',
         'api.apps.ApiConfig',
-        'footer.apps.FooterConfig',
         'pricing.apps.PricingConfig',
         'publishapp.apps.PublishappConfig',
         'testimonials.apps.TestimonialsConfig',

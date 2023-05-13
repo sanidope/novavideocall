@@ -10,10 +10,16 @@ from django.urls import reverse
 from django.conf import settings
 from contactus.forms import ContactUsForm
 from testimonials.models import (CustomerStories, BlockQuote)
-from .models import (NadiaProfile, LizzyProfile, DownloadPageArticle, Application)
+from .models import (
+    NadiaProfile, 
+    LizzyProfile, 
+    DownloadPageArticle, 
+    Application, 
+    PrivacyPolicy, 
+    TermsOfUse
+)
 from contactus.models import (PreVisitInquires, SalesQuestions, BillingQuestions, OfficeAddressDetail)
 from about.models import ( FirstSection, SecSection, FourthSection, FifthSection, AboutUsIcons)
-from footer.models import (PrivacyPolicy, TermsOfUse)
 from pricing.models import (
     PricingComparePlan,
     PricingFAQ,
