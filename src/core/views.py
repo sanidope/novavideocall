@@ -299,7 +299,7 @@ def coming_soon(request):
         'seo_description' : '',
         'og_description' : '',
         "og_title" : '', 
-        'og_url': 'https://vidicu.live/pricing/',
+        'og_url': '',
         'og_type' : 'website',
         "og_image" : '',
         "og_site_name" : '',
