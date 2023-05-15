@@ -8,16 +8,16 @@
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Vidicu" />
+  <meta name="author" content="Novavideocall" />
   <meta name=”robots” content="index, follow">
   <link rel="canonical" href="{{ og_url }}">
   <meta name="description" content="{{  seo_description  }}"/> 
 
   <!-- Title -->
-  <title>Blog: Article | Vidicu </title>
+  <title>Blog: Article | Novavideocall </title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+  <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
 
   <meta property="og:type" content="{{ og_type }}" />
   <meta property="og:title" content="{{ og_title }}" />
@@ -57,7 +57,7 @@
 
         <div class="row justify-content-lg-center">
           <div class="col-lg-10">
-            <img class="img-fluid" src="{{ post.post_image_large.url }}" width="{{ post.post_image_large.width }}" height="{{ post.post_image_large.height }}" alt="{{ post.post_image_description }}">
+            <img class="img-fluid" src="{{ post.post_image.url }}" width="{{ post.post_image.width }}" height="{{ post.post_image.height }}" alt="{{ post.post_image_description }}">
           </div>
           <!-- End Col -->
         </div>
@@ -111,7 +111,7 @@
             <!-- Card -->
             <a class="card card-ghost card-transition-zoom h-100" href="{{ post.get_absolute_url }}">
               <div class="card-transition-zoom-item">
-                <img class="card-img" src="{{ post.post_image_related.url }}" width="{{ post.post_image_related.width }}" height="{{ post.post_image_related.height }}" alt="{{ post.post_image_description }}">
+                <img class="card-img" src="{{ post. post_image_large.url }}" width="{{ post.post_image_related.width }}" height="{{ post.post_image_related.height }}" alt="{{ post.post_image_description }}">
               </div>
 
               <div class="card-body">
@@ -177,7 +177,7 @@
       <!-- Heading -->
       <div class="w-lg-65 text-center mx-lg-auto mb-7">
         <h3>Stay in the know</h3>
-        <p>Get special offers on the latest developments from Vidicu.</p>
+        <p>Get special offers on the latest developments from Novavideocall.</p>
       </div>
       <!-- End Heading -->
 
