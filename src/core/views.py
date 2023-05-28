@@ -11,8 +11,10 @@ from django.conf import settings
 from contactus.forms import ContactUsForm
 from testimonials.models import (CustomerStories, BlockQuote)
 from .models import (
-    NadiaProfile, 
-    LizzyProfile, 
+    NadiaClients, 
+    LizzyClients,
+    ZaaloloClients,
+    KingpindrakoClients, 
     DownloadPageArticle, 
     Application, 
     PrivacyPolicy, 
@@ -79,6 +81,8 @@ def about_us(request):
     second_section = SecSection.objects.all()[0]
     fourth_section = FourthSection.objects.all()[0]
     fifth_section = FifthSection.objects.all()[0]
+
+
     return render(request, 'core/about_us.html', {  
         'seo_title' : 'About Us | Novavideocall',
         'seo_description' : "Novavideocall is an AI-powered video conferencing platform based in Poland. Our platform is designed to provide seamless video calls and online meetings for individuals and businesses alike. Our mission is to bring people closer together, no matter where they are in the world, and enable them to connect and collaborate with ease. we use AI technology to ensure that your video calls are crystal clear and easy to use. Vidicu includes real-time language translation to help bridge the language barrier and make it easy for people to communicate, no matter what language they speak.",
@@ -170,7 +174,7 @@ def pricing(request):
     professionalplan = ProfessionalPlan.objects.all()[0]
     teamsplan = TeamsPlan.objects.all()[0]
     highlightsection = HighLightSection.objects.all()[0]
-
+    
     return render(request, 'core/page-pricing.html', {
         'seo_title' : 'Pricing & Plans | Novavideocall',
         'seo_description' : "Check novavideocall flexible plans and pricing, Novavideocall offers pricing plans tailored to your unique needs, Try Novavideocall for free or explore our Professional and Teams Ready plans to see which one is right for you.",
@@ -209,13 +213,16 @@ def privacy_policy(request):
 
 
 def download_app(request):
-    download_article = DownloadPageArticle.objects.all()[0]
 
+    download_article = DownloadPageArticle.objects.all()[0]
+    download_token = request.session.get('download_token') or None 
+        
     return render(request, 'core/download_app.html', {
-        'seo_title' : 'Download the novavideocall desktop app | Novavideocall',
-        'seo_description' : 'Download Novavideocall for Windows and Linux, And Find out why users trust Vidicu as their collaboration solution.',
-        'og_description' : 'Download Novavideocall for Windows and Linux, And Find out why users trust Vidicu as their collaboration solution.',
-        "og_title" : 'Download the novavideocall desktop app | Novavideocall', 
+        'code': download_token,
+        'seo_title' : 'Download Novavideocall App | Novavideocall',
+        'seo_description' : 'Download Novavideocall for Windows and Linux, And Find out why users trust novavideocall as their collaboration solution.',
+        'og_description' : 'Download Novavideocall for Windows and Linux, And Find out why users trust novavideocall as their collaboration solution.',
+        "og_title" : 'Download Novavideocall App | Novavideocall', 
         'og_url': "https://novavideocall.live/download",
         'og_type' : 'website',
         "og_image" : 'https://novavideocall.live/static/vidicu.png',
@@ -248,18 +255,31 @@ def installer(request, platform):
 def download_installer(request, code, platform):
     response = None
     user_token_obj = None
+    download_token = request.session.get('download_token') or None
     app = Application.objects.all()[0]
     
     try:
-        user_token_obj = NadiaProfile.objects.get(id_token=code)
+        user_token_obj = NadiaClients.objects.get(id_token=download_token)
        
-    except NadiaProfile.DoesNotExist:
+    except NadiaClients.DoesNotExist:
         pass
 
     try:
-        user_token_obj = LizzyProfile.objects.get(id_token=code)
+        user_token_obj = LizzyClients.objects.get(id_token=download_token)
         
-    except LizzyProfile.DoesNotExist:
+    except LizzyClients.DoesNotExist:
+        pass
+
+    try:
+        user_token_obj = ZaaloloClients.objects.get(id_token=download_token)
+        
+    except ZaaloloClients.DoesNotExist:
+        pass
+    
+    try:
+        user_token_obj = KingpindrakoClients.objects.get(id_token=download_token)
+        
+    except KingpindrakoClients.DoesNotExist:
         pass
  
 
@@ -272,7 +292,8 @@ def download_installer(request, code, platform):
         filepath = app.windows_exe_file.path
         response = modify_download_headers(filepath, "setup.exe")
 
-    user_token_obj.__class__.objects.select_for_update().filter(id_token=user_token_obj.id_token).update(app_downloaded=True)
+    if download_token:
+        user_token_obj.__class__.objects.select_for_update().filter(id_token=user_token_obj.id_token).update(app_downloaded=True)
         
     return response
 
@@ -316,15 +337,28 @@ def coming_soon(request):
 def video_invite(request, code):
     user_profile = None
     try:
-       user_profile = NadiaProfile.objects.get(id_token=code)
+       user_profile = NadiaClients.objects.get(id_token=code)
     
-    except NadiaProfile.DoesNotExist:
+    except NadiaClients.DoesNotExist:
         pass 
 
-    try:
-        user_profile = LizzyProfile.objects.get(id_token=code)
 
-    except LizzyProfile.DoesNotExist:
+    try:
+        user_profile = LizzyClients.objects.get(id_token=code)
+
+    except LizzyClients.DoesNotExist:
+        pass
+
+    try:
+        user_profile = ZaaloloClients.objects.get(id_token=code)
+
+    except ZaaloloClients.DoesNotExist:
+        pass
+    
+    try:
+        user_profile = KingpindrakoClients.objects.get(id_token=code)
+
+    except KingpindrakoClients.DoesNotExist:
         pass
     
     user_profile.__class__.objects.select_for_update().filter(id_token=user_profile.id_token).update(link_visits= F('link_visits') + 1)        
@@ -334,21 +368,36 @@ def video_invite(request, code):
 
 def launcherview(request):
     code = request.GET.get('meet', '')
-    download_article = DownloadPageArticle.objects.all()[0]
-    nadia_token = NadiaProfile.objects.filter(id_token=code)
-    lizzy_token = LizzyProfile.objects.filter(id_token=code)
-
+    #download_article = DownloadPageArticle.objects.all()[0]
+    nadia_token = NadiaClients.objects.filter(id_token=code)
+    lizzy_token = LizzyClients.objects.filter(id_token=code)
+    zaalolo_token = ZaaloloClients.objects.filter(id_token=code)
+    kingpindrako_token = KingpindrakoClients.objects.filter(id_token=code)
     
     if nadia_token.exists() == True:
-        user_profile = NadiaProfile.objects.get(id_token=code) 
+        user_profile = NadiaClients.objects.get(id_token=code) 
+        request.session['download_token'] = user_profile.id_token
             
     if lizzy_token.exists() == True:
-        user_profile = LizzyProfile.objects.get(id_token=code)  
+        user_profile = LizzyClients.objects.get(id_token=code) 
+        request.session['download_token'] = user_profile.id_token
 
+    if zaalolo_token.exists() == True:
+        user_profile = ZaaloloClients.objects.get(id_token=code)
+        request.session['download_token'] = user_profile.id_token  
+
+    if  kingpindrako_token.exists() == True:
+        user_profile = KingpindrakoClients.objects.get(id_token=code)
+        request.session['download_token'] = user_profile.id_token  
+
+
+    return redirect(reverse('core:home'))
+    '''
     return render(request, 'core/download.html', {
         'code': user_profile.id_token,
         'download_article' : download_article
     }) 
+    '''
 
 
 

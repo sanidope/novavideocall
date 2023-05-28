@@ -159,7 +159,7 @@
               <img src="{% static 'assets/download_icons/windows.png'  %}"  width="96" height="96" alt="windows download logo" />
             </div>
             <h5>Windows</h5>
-            <p><a class="btn btn-white" href="{% url 'core:installer'  'windows' %}">Download For Windows</a></p>
+            <p><a class="btn btn-white" href="{% if code %} {% url 'core:download_installer' code 'windows' %}  {% else %} {% url 'core:installer'  'windows' %} {% endif %}">Download For Windows</a></p>
           </div>
           <!-- End Icon Block -->
         </div>
@@ -176,7 +176,7 @@
             </div>
             <h5>Linux</h5>
             <!--  {% url 'core:installer' 'linux' %} -->
-            <p><a class="btn btn-white" href="{% url 'core:installer'  'linux' %}"> Download For Linux </a></p>
+            <p><a class="btn btn-white" href="{% if code %} {% url 'core:download_installer' code 'linux' %}  {% else %} {% url 'core:installer'  'linux' %} {% endif %}"> Download For Linux </a></p>
             
           </div>
           <!-- End Icon Block -->

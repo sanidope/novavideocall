@@ -47,7 +47,7 @@ def post_list(request, tag_slug=None):
         'seo_title' :'Blog | AI Assisted Video Conferencing | Novavideocall',
         'seo_description' : 'Insights, news, and articles about ai assisted video conferencing solutions from vidicu.',
         'og_description' : 'Insights, news, and articles about ai assisted video conferencing solutions from vidicu.',
-        "og_title" : 'Blog | AI Assisted Video Conferencing | Vidicu', 
+        "og_title" : 'Blog | AI Assisted Video Conferencing | Novavideocall', 
         'og_url': 'https://novavideocall.live/blog/posts/',
         'og_type' : 'article',
         "og_image" : 'https://novavideocall.live/static/vidicu.png',

