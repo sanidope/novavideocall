@@ -10,7 +10,7 @@ if not settings.DEBUG:
 
     # Build paths inside the project like this: BASE_DIR / 'subdir'.
     BASE_DIR = Path(__file__).resolve().parent.parent.parent
-    BASE_URL = 'https://novavideocall.live/'
+    BASE_URL = 'https://novavideocall.live'
 
 
     # SECURITY WARNING: don't run with debug turned on in production!
