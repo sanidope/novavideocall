@@ -8,13 +8,13 @@ except:
 
 
 try:
-    from .production import *
+    from . production import *
 
 except:
     pass
 
 try:
-    from .pythonanywhere import *
+    from . pythonanywhere import *
 
 except:
     pass
