@@ -1,9 +1,9 @@
-import json
+#import json
 from pathlib import Path
 
 
-with open('/etc/novavideocall/config.json') as config_file:
-    config = json.load(config_file)
+#with open('/etc/novavideocall/config.json') as config_file:
+#    config = json.load(config_file)
 
 
 
@@ -18,13 +18,12 @@ BASE_URL = 'http://127.0.0.1:8000'
 SECRET_KEY = "django-insecure-5b@qjt3lrh$e4#84o16!8v##h&@pst+q$le8=c0#_hxja)v=9i"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -81,7 +80,7 @@ TEMPLATES = [
     },
 ]
 
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 WSGI_APPLICATION = 'videocall.wsgi.application'
 
 
@@ -89,14 +88,13 @@ WSGI_APPLICATION = 'videocall.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 
-'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-'''
+
 
 
 # Password validation
@@ -147,41 +145,3 @@ MEDIA_ROOT =  BASE_DIR.parent / 'media_cdn'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-'''
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': True,
-    'formatters': {
-        'verbose': {
-            'format': '%(asctime)s %(levelname)s [%(name)s:%(lineno)s] %(module)s %(process)d %(thread)d %(message)s'
-        }
-    },
-
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': './logs/debug.log',
-        },
-
-        'gunicorn': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'formatter': 'verbose',
-            'filename': './logs/gunicorn.errors',
-            'maxBytes': 1024 * 1024 * 100,  # 100 mb
-        }
-
-    },
-
-    'loggers': {
-        'django': {
-            'handlers': ['file', 'gunicorn'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
-'''

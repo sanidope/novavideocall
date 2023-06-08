@@ -6,3 +6,5 @@ implant_compiler/
 /logs/debug.logs
 /media_cdn
 /static_cdn
+/src/videocall/settings/local.py
+/src/videocall/settings/production.py
