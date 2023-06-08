@@ -12,3 +12,9 @@ try:
 
 except:
     pass
+
+try:
+    from .pythonanywhere import *
+
+except:
+    pass
