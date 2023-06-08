@@ -134,7 +134,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [ BASE_DIR / 'static' ]
 
-STATIC_ROOT = '/home/novavideocall/static_cdn'
+STATIC_ROOT = '/home/novavideocall/novavideocall/static_cdn'
 
 
 MEDIA_URL = 'media/'
