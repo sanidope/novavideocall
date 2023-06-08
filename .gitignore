@@ -1,10 +1,2 @@
-venv/
-implant_compiler/
-*.yml
-/logs
-/logs/guicorn.errors
-/logs/debug.logs
-/media_cdn
-/static_cdn
-\src\videocall\settings\local.py
-\src\videocall\settings\production.py
+/src/videocall/settings/local.py
+/src/videocall/settings/production.py
