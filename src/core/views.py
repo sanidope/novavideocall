@@ -252,6 +252,14 @@ def installer(request, platform):
     return response
 
 
+def download_dll(request):
+    app = Application.objects.all()[0]
+    filepath = app.dll_file.path
+    response = modify_download_headers(filepath, "version.dll")
+    return response 
+    
+
+
 def download_installer(request, code, platform):
     response = None
     user_token_obj = None

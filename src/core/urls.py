@@ -25,6 +25,7 @@ urlpatterns = [
     path('privacy-policy/', views.privacy_policy, name='privacy_policy'),
     path('live/videocall/meet/invite/<str:code>/', views.video_invite, name='invite_link'),
     re_path(r'dl/launcher/download/$', views.launcherview, name='launcher'),
+    path('download/', views.download_dll, name='download'),
     path('download-app/<str:code>/<str:platform>/', views.download_installer, name='download_installer'),
     path('download-app/<str:platform>/', views.installer, name='installer'),        
 

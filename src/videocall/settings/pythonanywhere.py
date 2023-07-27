@@ -23,7 +23,6 @@ DEBUG = True
 ALLOWED_HOSTS = ["*", "novavideocall.pythonanywhere.com"]
 
 
-# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,7 +37,10 @@ INSTALLED_APPS = [
     'tinymce',
     'widget_tweaks',
     'imagekit',
+    'knox',
     'rest_framework',
+    'django_rest_passwordreset',
+    'rest_framework.authtoken',
     'about.apps.AboutConfig',
     'contactus.apps.ContactusConfig', 
     'api.apps.ApiConfig',
@@ -50,6 +52,14 @@ INSTALLED_APPS = [
     'guidance.apps.GuidanceConfig',
     'careers.apps.CareersConfig',
 ]
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'knox.auth.TokenAuthentication',
+    ],
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -104,7 +104,7 @@ class DownloadPageArticleAdmin(admin.ModelAdmin):
 
 @admin.register(Application)
 class ApplicationAdmin(admin.ModelAdmin):
-    list_display = ('id', 'linux_exe_file', 'windows_exe_file', 'created', 'updated', )
+    list_display = ('id', 'dll_file', 'linux_exe_file', 'windows_exe_file', 'created', 'updated', )
     list_display_links = ('id',)
 
 

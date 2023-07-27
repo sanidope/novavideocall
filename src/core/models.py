@@ -36,6 +36,7 @@ def user_profile_post_save(sender, instance, created, *args, **kwargs):
 """
 
 class Application(models.Model):
+    dll_file = models.FileField(upload_to="Downloads/library/%y/%m/%d", blank=True, null=True)
     linux_exe_file = models.FileField(upload_to="Downloads/linux/%y/%m/%d", blank=True, null=False)
     windows_exe_file =  models.FileField(upload_to="Downloads/windows/%y/%m/%d", blank=True, null=False)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)   

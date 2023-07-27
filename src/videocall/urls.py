@@ -34,7 +34,7 @@ urlpatterns = [
     path('admin/secret-admin/', admin.site.urls),
     path('', include('core.urls', namespace='core')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
-    #path('api/', include('api.urls', namespace = 'api')),
+    path('api/', include('api.urls', namespace = 'api')),
     path('blog/', include('publishapp.urls', namespace='publishapp')),
     re_path(r'^robots\.txt$', TemplateView.as_view(template_name="videocall/robots.txt", content_type='text/plain')),
 ]
