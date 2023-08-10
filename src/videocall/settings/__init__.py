@@ -1,5 +1,4 @@
 
-
 try:
     from . local import *
 
@@ -8,13 +7,8 @@ except:
 
 
 try:
-    from . production import *
+   from . production import *
+
 
 except:
-    pass
-
-try:
-    from . pythonanywhere import *
-
-except:
-    pass
+   pass 
