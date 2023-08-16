@@ -16,11 +16,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = config['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-# Application definition
 
 # Application definition
 INSTALLED_APPS = [
