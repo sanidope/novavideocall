@@ -6,7 +6,7 @@ from .models import (
 
 
 class PaymentSiteMaps(Sitemap):
-    changefreq = 'daily'
+    changefreq = 'weekly'
     priority = 0.5
 
     def items(self):

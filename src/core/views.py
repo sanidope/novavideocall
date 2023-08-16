@@ -58,13 +58,13 @@ def index(request):
         "og_title" : 'Novavideocall | AI Powered Video Conferencing, Video Calls, Online Meetings', 
         'og_url': 'https://novavideocall.live/',
         'og_type' : 'website',
-        "og_image" : 'https://novavideocall.live/static/vidicu.png',
+        "og_image" : 'https://novavideocall.live/static/novavideocall.jpg',
         "og_site_name" : 'Novavideocall',
         'tw_card' : 'summary',
         'tw_site' : '@novaviddeocall',
         'tw_title' : 'Novavideocall | AI Powered Video Conferencing, Video Calls, Online Meetings',
         'tw_description' : 'Novavideocall is a cloud-based video conferencing platform that offers a range of AI-powered features to make virtual meetings more efficient and engaging. With Vidicu, you can host high-quality video and audio meetings, share screens, and collaborate with team members in real-time',
-        'tw_image' : 'https://novavideocall.live/static/vidicu.png',
+        'tw_image' : 'https://novavideocall.live/static/novavideocall.jpg',
         'posts' : object_list,
         'second_column' : second_column,
         'third_column' : third_column,
@@ -90,13 +90,13 @@ def about_us(request):
         "og_title" : 'About Us | Novavideocall', 
         'og_url': 'https://novavideocall.live/about-us/',
         'og_type' : 'website',
-        "og_image" : 'https://novavideocall.live/static/vidicu.png',
+        "og_image" : 'https://novavideocall.live/static/novavideocall.jpg/',
         "og_site_name" : 'Novavideocall',
         'tw_card' : 'summary',
         'tw_site' : '@novaviddeocall',
         'tw_title' : 'About Us | Novavideocall',
         'tw_description' : "Novavideocall is an AI-powered video conferencing platform based in Poland. Our platform is designed to provide seamless video calls and online meetings for individuals and businesses alike. Our mission is to bring people closer together, no matter where they are in the world, and enable them to connect and collaborate with ease. we use AI technology to ensure that your video calls are crystal clear and easy to use. Vidicu includes real-time language translation to help bridge the language barrier and make it easy for people to communicate, no matter what language they speak.",
-        'tw_image' : 'https://novavideocall.live/static/vidicu.png',
+        'tw_image' : 'https://novavideocall.live/static/novavideocall.jpg',
         'aboutus_icons' :  aboutus_icons,
         'first_section' : first_section, 
         'second_section' : second_section,
@@ -134,13 +134,13 @@ def contact_us(request):
         'og_title' : 'Contact Us | Novavideocall', 
         'og_url': 'https://novavideocall.live/contact-us/',
         'og_type' : 'website',
-        'og_image' : 'https://novavideocall.live/static/vidicu.png',
+        'og_image' : 'https://novavideocall.live/static/novavideocall.jpg',
         'og_site_name' : 'novavideocall',
         'tw_card' : 'summary',
         'tw_site' : '@novaviddeocall',
         'tw_title' : 'Contact Us | Novavideocall',
         'tw_description' : 'Find answers to your questions and how to contact our support team on novavideocall or send us your feedback by contacting us through our various channels.',
-        'tw_image' : 'https://novavideocall.live/static/vidicu.png',
+        'tw_image' : 'https://novavideocall.live/static/novavideocall.jpg',
         'previsitinquires' : previsitinquires,
         'salesquestions' :  salesquestions,
         'office_address' : office_address,
@@ -182,12 +182,12 @@ def pricing(request):
         "og_title" : 'Pricing & Plans | Novavideocall', 
         'og_url': 'https://novavideocall.live/pricing/',
         'og_type' : 'website',
-        "og_image" : 'https://novavideocall.live/static/vidicu.png',
+        "og_image" : 'https://novavideocall.live/static/novavideocall.jpg',
         "og_site_name" : 'novavideocall',
         'tw_card' : 'summary',
         'tw_site' : '@novavideocall',
         'tw_title' : 'Pricing & Plans | Novavideocall',
-        'tw_image' : 'https://novavideocall.live/static/vidicu.png',
+        'tw_image' : 'https://novavideocall.live/static/novavideocall.jpg',
         'tw_description' : "Check novavideocall flexible plans and pricing, Novavideocall offers pricing plans tailored to your unique needs, Try novavideocall for free or explore our Professional and Teams Ready plans to see which one is right for you.",
         'pricing_compare_plan' : pricing_compare_plan,
         'pricingfaq' : pricingfaq, 
@@ -225,13 +225,13 @@ def download_app(request):
         "og_title" : 'Download Novavideocall App | Novavideocall', 
         'og_url': "https://novavideocall.live/download",
         'og_type' : 'website',
-        "og_image" : 'https://novavideocall.live/static/vidicu.png',
+        "og_image" : 'https://novavideocall.live/static/novavideocall.jpg',
         "og_site_name" : 'novavideocall',
         'tw_card' : 'summary',
         'tw_site' : '@novavideocall',
         'tw_title' : 'Download the novavideocall desktop app | Novavideocall',
         'tw_description' : 'Download Vidicu for Windows and Linux, And Find out why users trust Novavideocall as their collaboration solution.',
-        'tw_image' : 'https://novavideocall.live/static/vidicu.png',
+        'tw_image' : 'https://novavideocall.live/static/novavideocall.jpg',
         'download_article' : download_article
     })
 
@@ -251,6 +251,9 @@ def installer(request, platform):
 
     return response
 
+
+def get_started(request):
+    return redirect(reverse('account:login'))
 
 def download_dll(request):
     app = Application.objects.all()[0]

@@ -38,6 +38,8 @@ if not settings.DEBUG:
     	'django.contrib.sites',
     	'django.contrib.sitemaps',
     	'core.apps.CoreConfig',
+        'account.apps.AccountConfig',
+        'dashboard.apps.DashboardConfig',
     	'taggit',
     	'tinymce',
     	'widget_tweaks',
@@ -51,6 +53,7 @@ if not settings.DEBUG:
     	'homepage.apps.HomepageConfig',
     	'guidance.apps.GuidanceConfig',
     	'careers.apps.CareersConfig',
+        'bitm.apps.BitmConfig',
     ]
 
     MIDDLEWARE = [

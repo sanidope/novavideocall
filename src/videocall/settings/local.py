@@ -33,6 +33,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'core.apps.CoreConfig',
+    'account.apps.AccountConfig',
+    'dashboard.apps.DashboardConfig',
     'taggit',
     'tinymce',
     'widget_tweaks',
@@ -46,7 +48,9 @@ INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'guidance.apps.GuidanceConfig',
     'careers.apps.CareersConfig',
+    'bitm.apps.BitmConfig',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -125,6 +129,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+SITE_ID = 1
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
